@@ -1,0 +1,14 @@
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0
+        http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+
+  <bean id="gprcServer" class="org.opennms.integration.api.v1.grpc.OnmsIntegrationServer"
+        init-method="start" destroy-method="shutdown"/>
+
+  <service interface="org.opennms.integration.api.v1.alarms.AlarmLifecycleListener">
+    <bean class="org.opennms.integration.api.v1.grpc.alarms.AlarmLifeCycleListenerImpl">
+      <argument ref="gprcServer"/>
+    </bean>
+  </service>
+
+</blueprint>

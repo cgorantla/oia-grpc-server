@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features name="openmms-plugins-pris-features" xmlns="http://karaf.apache.org/xmlns/features/v1.4.0">
+
+  <repository>mvn:org.opennms.integration.api/karaf-features/${opennms.api.version}/xml</repository>
+
+  <feature name="opennms-grpc-api-server" description="OpenNMS :: GRPC :: API :: Server " version="${project.version}">
+    <feature dependency="true">aries-blueprint</feature>
+    <feature version="${opennms.api.version}" dependency="true">opennms-integration-api</feature>
+    <bundle>mvn:org.opennms.grpc.api/osgi/${project.version}</bundle>
+    <bundle>mvn:org.opennms.grpc.api/integration/${project.version}</bundle>
+    <bundle dependency="true">mvn:com.google.guava/guava/${guavagRPCVersion}</bundle>
+  </feature>
+
+</features>
