@@ -68,6 +68,9 @@ public class ModelConverter {
     }
 
     private static Model.AlarmType convertAlarmType(AlarmType alarmType) {
+        if(alarmType == null) {
+            return null;
+        }
         switch (alarmType) {
             case PROBLEM:
                 return Model.AlarmType.PROBLEM_WITH_CLEAR;
@@ -80,6 +83,9 @@ public class ModelConverter {
     }
 
     private static Model.Severity convertSeverity(Severity severity) {
+        if(severity == null) {
+            return null;
+        }
         switch (severity) {
             case INDETERMINATE:
                 return Model.Severity.INDETERMINATE;
