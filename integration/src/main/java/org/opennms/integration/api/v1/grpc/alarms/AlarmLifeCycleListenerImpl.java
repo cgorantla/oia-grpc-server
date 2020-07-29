@@ -39,11 +39,14 @@ import org.opennms.integration.api.v1.grpc.ModelConverter;
 import org.opennms.integration.api.v1.model.Alarm;
 import org.opennms.integration.api.v1.proto.Alarms;
 import org.opennms.integration.api.v1.proto.Model;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import io.grpc.stub.StreamObserver;
 
 public class AlarmLifeCycleListenerImpl implements AlarmLifecycleListener {
 
+    private static final Logger LOG = LoggerFactory.getLogger(AlarmLifeCycleListenerImpl.class);
     private final GrpcIntegrationServer grpcIntegrationServer;
 
     public AlarmLifeCycleListenerImpl(GrpcIntegrationServer grpcIntegrationServer) {
@@ -60,7 +63,13 @@ public class AlarmLifeCycleListenerImpl implements AlarmLifecycleListener {
         List<Model.Alarm> protoAlarms = alarms.stream().map(ModelConverter::buildAlarmProto).collect(Collectors.toList());
         Alarms.AlarmsList.Builder builder = Alarms.AlarmsList.newBuilder();
         builder.addAllAlarms(protoAlarms);
-        observers.forEach(observer -> observer.onNext(builder.build()));
+        observers.forEach(observer -> {
+            try {
+                observer.onNext(builder.build());
+            } catch (Exception e) {
+                LOG.error("Exception while sending snapshot of alarms for the grpc client", e);
+            }
+        });
     }
 
     @Override
@@ -69,7 +78,13 @@ public class AlarmLifeCycleListenerImpl implements AlarmLifecycleListener {
         if (observers.isEmpty()) {
             return;
         }
-        observers.forEach(observer -> observer.onNext(buildAlarmProto(alarm)));
+        observers.forEach(observer -> {
+            try {
+                observer.onNext(buildAlarmProto(alarm));
+            } catch (Exception e) {
+                LOG.error("Exception while sending new or updated alarm for grpc client", e);
+            }
+        });
     }
 
     @Override
@@ -80,9 +95,14 @@ public class AlarmLifeCycleListenerImpl implements AlarmLifecycleListener {
         }
         Alarms.DeleteAlarm deleteAlarm = Alarms.DeleteAlarm.newBuilder().setId(alarmId)
                 .setReductionKey(reductionKey).build();
-        observers.forEach(observer -> observer.onNext(deleteAlarm));
+        observers.forEach(observer -> {
+            try {
+                observer.onNext(deleteAlarm);
+            } catch (Exception e) {
+                LOG.error("Exception while sending updated for deleted alarm for grpc client", e);
+            }
+        });
     }
-
 
 
 }
