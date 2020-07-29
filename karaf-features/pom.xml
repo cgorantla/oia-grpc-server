@@ -108,8 +108,13 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.opennms.integration.api</groupId>
+      <groupId>org.opennms.grpc.api</groupId>
       <artifactId>osgi</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.grpc.api</groupId>
+      <artifactId>integration</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>

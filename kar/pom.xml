@@ -27,7 +27,7 @@
             </goals>
             <configuration>
               <featuresFile>mvn:org.opennms.grpc.api/karaf-features/${project.version}/xml</featuresFile>
-              <finalName>opennms-integration-grpc</finalName>
+              <finalName>opennms-oia-grpc-server</finalName>
               <ignoreDependencyFlag>true</ignoreDependencyFlag>
             </configuration>
           </execution>

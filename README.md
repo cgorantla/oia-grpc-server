@@ -9,6 +9,6 @@ mvn clean install
 
 ### Deploy
 
-cp kar/target/opennms-integration-grpc.kar ${OPENNMS.TARGET}/deploy/
+cp kar/target/opennms-oia-grpc-server.kar ${OPENNMS.TARGET}/deploy/
 
 
