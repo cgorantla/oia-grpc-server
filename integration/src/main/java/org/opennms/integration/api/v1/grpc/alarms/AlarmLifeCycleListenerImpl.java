@@ -57,69 +57,60 @@ public class AlarmLifeCycleListenerImpl implements AlarmLifecycleListener {
 
     @Override
     public void handleAlarmSnapshot(List<Alarm> alarms) {
-        List<StreamObserver<Alarms.AlarmsList>> observers = grpcIntegrationServer.getAlarmLifeCycleListenerStream().getSnapShotObserver();
-        if (observers.isEmpty()) {
-            return;
+        try {
+            List<StreamObserver<Alarms.AlarmsList>> observers = grpcIntegrationServer.getAlarmLifeCycleListenerStream().getSnapShotObserver();
+            observers.removeIf(ob -> {
+                ServerCallStreamObserver streamObserver = (ServerCallStreamObserver) ob;
+                return streamObserver.isCancelled();
+            });
+            if (observers.isEmpty()) {
+                return;
+            }
+            List<Model.Alarm> protoAlarms = alarms.stream().map(ModelConverter::buildAlarmProto).collect(Collectors.toList());
+            Alarms.AlarmsList.Builder builder = Alarms.AlarmsList.newBuilder();
+            builder.addAllAlarms(protoAlarms);
+            observers.forEach(observer -> observer.onNext(builder.build()));
+        } catch (Exception e) {
+            LOG.error("Exception while sending alarm snapshot to grpc clients", e);
         }
 
-        observers.removeIf(ob -> {
-            ServerCallStreamObserver streamObserver = (ServerCallStreamObserver) ob;
-            return streamObserver.isCancelled();
-        });
-
-        List<Model.Alarm> protoAlarms = alarms.stream().map(ModelConverter::buildAlarmProto).collect(Collectors.toList());
-        Alarms.AlarmsList.Builder builder = Alarms.AlarmsList.newBuilder();
-        builder.addAllAlarms(protoAlarms);
-        observers.forEach(observer -> {
-            try {
-                observer.onNext(builder.build());
-            } catch (Exception e) {
-                LOG.error("Exception while sending snapshot of alarms for the grpc client", e);
-            }
-        });
     }
 
     @Override
     public void handleNewOrUpdatedAlarm(Alarm alarm) {
-        List<StreamObserver<Model.Alarm>> observers = grpcIntegrationServer.getAlarmLifeCycleListenerStream().getNewOrUpdatedObserver();
-        if (observers.isEmpty()) {
-            return;
-        }
-        observers.removeIf(ob -> {
-            ServerCallStreamObserver streamObserver = (ServerCallStreamObserver) ob;
-            return streamObserver.isCancelled();
-        });
-
-        observers.forEach(observer -> {
-            try {
-                observer.onNext(buildAlarmProto(alarm));
-            } catch (Exception e) {
-                LOG.error("Exception while sending new or updated alarm for grpc client", e);
+        try {
+            List<StreamObserver<Model.Alarm>> observers = grpcIntegrationServer.getAlarmLifeCycleListenerStream().getNewOrUpdatedObserver();
+            observers.removeIf(ob -> {
+                ServerCallStreamObserver streamObserver = (ServerCallStreamObserver) ob;
+                return streamObserver.isCancelled();
+            });
+            if (observers.isEmpty()) {
+                return;
             }
-        });
+            observers.forEach(observer -> observer.onNext(buildAlarmProto(alarm)));
+        } catch (Exception ex) {
+            LOG.error("Exception while sending new or updated alarm for grpc client", ex);
+        }
+
     }
 
     @Override
     public void handleDeletedAlarm(int alarmId, String reductionKey) {
-        List<StreamObserver<Alarms.DeleteAlarm>> observers = grpcIntegrationServer.getAlarmLifeCycleListenerStream().getDeleteAlarmObserver();
-        if (observers.isEmpty()) {
-            return;
-        }
-
-        observers.removeIf(ob -> {
-            ServerCallStreamObserver streamObserver = (ServerCallStreamObserver) ob;
-            return streamObserver.isCancelled();
-        });
-
-        Alarms.DeleteAlarm deleteAlarm = Alarms.DeleteAlarm.newBuilder().setId(alarmId)
-                .setReductionKey(reductionKey).build();
-        observers.forEach(observer -> {
-            try {
-                observer.onNext(deleteAlarm);
-            } catch (Exception e) {
-                LOG.error("Exception while sending updated for deleted alarm for grpc client", e);
+        try {
+            List<StreamObserver<Alarms.DeleteAlarm>> observers = grpcIntegrationServer.getAlarmLifeCycleListenerStream().getDeleteAlarmObserver();
+            observers.removeIf(ob -> {
+                ServerCallStreamObserver streamObserver = (ServerCallStreamObserver) ob;
+                return streamObserver.isCancelled();
+            });
+            if (observers.isEmpty()) {
+                return;
             }
-        });
+            Alarms.DeleteAlarm deleteAlarm = Alarms.DeleteAlarm.newBuilder().setId(alarmId)
+                    .setReductionKey(reductionKey).build();
+            observers.forEach(observer -> observer.onNext(deleteAlarm));
+        } catch (Exception e) {
+            LOG.error("Exception while sending updated for deleted alarm for grpc client", e);
+        }
     }
 
 

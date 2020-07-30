@@ -1,18 +1,9 @@
 package org.opennms.integration.api.v1.proto;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
 import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
@@ -34,7 +25,7 @@ public final class EventListenerGrpc {
       fullMethodName = SERVICE_NAME + '/' + "OnEvent",
       requestType = org.opennms.integration.api.v1.proto.Events.EventListenerId.class,
       responseType = org.opennms.integration.api.v1.proto.Model.InMemoryEvent.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.opennms.integration.api.v1.proto.Events.EventListenerId,
       org.opennms.integration.api.v1.proto.Model.InMemoryEvent> getOnEventMethod() {
     io.grpc.MethodDescriptor<org.opennms.integration.api.v1.proto.Events.EventListenerId, org.opennms.integration.api.v1.proto.Model.InMemoryEvent> getOnEventMethod;
@@ -43,7 +34,7 @@ public final class EventListenerGrpc {
         if ((getOnEventMethod = EventListenerGrpc.getOnEventMethod) == null) {
           EventListenerGrpc.getOnEventMethod = getOnEventMethod =
               io.grpc.MethodDescriptor.<org.opennms.integration.api.v1.proto.Events.EventListenerId, org.opennms.integration.api.v1.proto.Model.InMemoryEvent>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "OnEvent"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
@@ -99,7 +90,7 @@ public final class EventListenerGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getOnEventMethod(),
-            asyncUnaryCall(
+            asyncServerStreamingCall(
               new MethodHandlers<
                 org.opennms.integration.api.v1.proto.Events.EventListenerId,
                 org.opennms.integration.api.v1.proto.Model.InMemoryEvent>(
@@ -133,7 +124,7 @@ public final class EventListenerGrpc {
      */
     public void onEvent(org.opennms.integration.api.v1.proto.Events.EventListenerId request,
         io.grpc.stub.StreamObserver<org.opennms.integration.api.v1.proto.Model.InMemoryEvent> responseObserver) {
-      asyncUnaryCall(
+      asyncServerStreamingCall(
           getChannel().newCall(getOnEventMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -161,8 +152,9 @@ public final class EventListenerGrpc {
      * Listen to all the events from OpenNMS.
      * </pre>
      */
-    public org.opennms.integration.api.v1.proto.Model.InMemoryEvent onEvent(org.opennms.integration.api.v1.proto.Events.EventListenerId request) {
-      return blockingUnaryCall(
+    public java.util.Iterator<org.opennms.integration.api.v1.proto.Model.InMemoryEvent> onEvent(
+        org.opennms.integration.api.v1.proto.Events.EventListenerId request) {
+      return blockingServerStreamingCall(
           getChannel(), getOnEventMethod(), getCallOptions(), request);
     }
   }
@@ -183,17 +175,6 @@ public final class EventListenerGrpc {
     protected EventListenerFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new EventListenerFutureStub(channel, callOptions);
-    }
-
-    /**
-     * <pre>
-     * Listen to all the events from OpenNMS.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<org.opennms.integration.api.v1.proto.Model.InMemoryEvent> onEvent(
-        org.opennms.integration.api.v1.proto.Events.EventListenerId request) {
-      return futureUnaryCall(
-          getChannel().newCall(getOnEventMethod(), getCallOptions()), request);
     }
   }
 

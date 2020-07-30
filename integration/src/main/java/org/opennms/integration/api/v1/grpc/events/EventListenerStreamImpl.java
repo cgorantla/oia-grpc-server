@@ -35,6 +35,8 @@ import org.opennms.integration.api.v1.model.InMemoryEvent;
 import org.opennms.integration.api.v1.proto.EventListenerGrpc;
 import org.opennms.integration.api.v1.proto.Events;
 import org.opennms.integration.api.v1.proto.Model;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Strings;
 
@@ -43,6 +45,7 @@ import io.grpc.stub.StreamObserver;
 
 public class EventListenerStreamImpl extends EventListenerGrpc.EventListenerImplBase {
 
+    private static final Logger LOG = LoggerFactory.getLogger(EventListenerStreamImpl.class);
     private final EventSubscriptionService eventSubscriptionService;
 
     public EventListenerStreamImpl(EventSubscriptionService eventSubscriptionService) {
@@ -80,12 +83,17 @@ public class EventListenerStreamImpl extends EventListenerGrpc.EventListenerImpl
 
         @Override
         public void onEvent(InMemoryEvent e) {
-            ServerCallStreamObserver streamObserver = (ServerCallStreamObserver) observer;
-            if (streamObserver.isCancelled()) {
-                eventSubscriptionService.removeEventListener(this);
+            try {
+                ServerCallStreamObserver streamObserver = (ServerCallStreamObserver) observer;
+                if (streamObserver.isCancelled()) {
+                    eventSubscriptionService.removeEventListener(this);
+                    return;
+                }
+                Model.InMemoryEvent event = ModelConverter.convertInMemoryEvent(e);
+                observer.onNext(event);
+            } catch (Exception ex) {
+                LOG.error("Exception while sending event with uei {} to grpc clients.", e.getUei(), ex);
             }
-            Model.InMemoryEvent event = ModelConverter.convertInMemoryEvent(e);
-            observer.onNext(event);
         }
     }
 

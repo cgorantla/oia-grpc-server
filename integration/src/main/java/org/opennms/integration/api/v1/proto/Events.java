@@ -1091,10 +1091,10 @@ public final class Events {
       "\004name\030\001 \001(\t2k\n\016EventForwarder\022-\n\tSendAsy" +
       "nc\022\022.oia.InMemoryEvent\032\n.oia.Empty\"\000\022*\n\010" +
       "SendSync\022\022.oia.InMemoryEvent\032\010.oia.Ack\"\000" +
-      "2F\n\rEventListener\0225\n\007OnEvent\022\024.oia.Event" +
-      "ListenerId\032\022.oia.InMemoryEvent\"\000B-\n$org." +
-      "opennms.integration.api.v1.protoZ\005.;oiab" +
-      "\006proto3"
+      "2H\n\rEventListener\0227\n\007OnEvent\022\024.oia.Event" +
+      "ListenerId\032\022.oia.InMemoryEvent\"\0000\001B-\n$or" +
+      "g.opennms.integration.api.v1.protoZ\005.;oi" +
+      "ab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

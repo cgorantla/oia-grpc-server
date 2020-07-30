@@ -29,5 +29,5 @@ service EventForwarder {
 service EventListener {
 
     // Listen to all the events from OpenNMS.
-    rpc OnEvent (EventListenerId) returns (InMemoryEvent) {}
+    rpc OnEvent (EventListenerId) returns (stream InMemoryEvent) {}
 }

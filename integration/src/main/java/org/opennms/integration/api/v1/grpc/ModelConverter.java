@@ -177,7 +177,7 @@ public class ModelConverter {
     public static Model.InMemoryEvent convertInMemoryEvent(InMemoryEvent inMemoryEvent) {
         Model.InMemoryEvent.Builder builder = Model.InMemoryEvent.newBuilder();
         Optional.ofNullable(inMemoryEvent.getUei()).ifPresent(builder::setUei);
-        Optional.ofNullable(inMemoryEvent.getSource()).ifPresent(builder::setUei);
+        Optional.ofNullable(inMemoryEvent.getSource()).ifPresent(builder::setSource);
         Optional.ofNullable(inMemoryEvent.getNodeId()).ifPresent(builder::setNodeId);
         Optional.ofNullable(convertSeverity(inMemoryEvent.getSeverity())).ifPresent(builder::setSeverity);
         List<Model.EventParameter> parameters = inMemoryEvent.getParameters().stream().map(ModelConverter::convertEventParameter).collect(Collectors.toList());
