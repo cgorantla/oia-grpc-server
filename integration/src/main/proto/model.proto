@@ -35,6 +35,14 @@ message DatabaseEvent {
     repeated EventParameter parameters = 3;
 }
 
+message InMemoryEvent {
+    string uei = 1;
+    string source = 2;
+    Severity severity = 3;
+    uint64 node_id = 4;
+    repeated EventParameter parameters = 5;
+}
+
 message IPInterface {
     string ip_address = 1;
     SNMPInterface snmp_interface = 2;

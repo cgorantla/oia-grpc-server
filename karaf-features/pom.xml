@@ -82,7 +82,7 @@
                 <feature>framework</feature>
               </framework>
               <features>
-                <feature>opennms-integration-api-grpc-server</feature>
+                <feature>opennms-integration-api-grpc-common</feature>
               </features>
             </configuration>
           </execution>
@@ -93,6 +93,17 @@
 
   <dependencies>
     <!-- Framework distribution -->
+
+    <dependency>
+      <groupId>org.opennms.grpc.api</groupId>
+      <artifactId>osgi</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.grpc.api</groupId>
+      <artifactId>integration</artifactId>
+      <version>${project.version}</version>
+    </dependency>
     <dependency>
       <groupId>org.apache.karaf.features</groupId>
       <artifactId>framework</artifactId>
@@ -106,16 +117,6 @@
       <version>${opennms.api.version}</version>
       <type>xml</type>
       <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.opennms.grpc.api</groupId>
-      <artifactId>osgi</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.opennms.grpc.api</groupId>
-      <artifactId>integration</artifactId>
-      <version>${project.version}</version>
     </dependency>
   </dependencies>
 

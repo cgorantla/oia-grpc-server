@@ -36,11 +36,14 @@ import org.opennms.integration.api.v1.config.events.AlarmType;
 import org.opennms.integration.api.v1.model.Alarm;
 import org.opennms.integration.api.v1.model.DatabaseEvent;
 import org.opennms.integration.api.v1.model.EventParameter;
+import org.opennms.integration.api.v1.model.InMemoryEvent;
 import org.opennms.integration.api.v1.model.IpInterface;
 import org.opennms.integration.api.v1.model.MetaData;
 import org.opennms.integration.api.v1.model.Node;
 import org.opennms.integration.api.v1.model.Severity;
 import org.opennms.integration.api.v1.model.SnmpInterface;
+import org.opennms.integration.api.v1.model.immutables.ImmutableEventParameter;
+import org.opennms.integration.api.v1.model.immutables.ImmutableInMemoryEvent;
 import org.opennms.integration.api.v1.proto.Model;
 
 public class ModelConverter {
@@ -68,7 +71,7 @@ public class ModelConverter {
     }
 
     private static Model.AlarmType convertAlarmType(AlarmType alarmType) {
-        if(alarmType == null) {
+        if (alarmType == null) {
             return null;
         }
         switch (alarmType) {
@@ -83,7 +86,7 @@ public class ModelConverter {
     }
 
     private static Model.Severity convertSeverity(Severity severity) {
-        if(severity == null) {
+        if (severity == null) {
             return null;
         }
         switch (severity) {
@@ -155,6 +158,13 @@ public class ModelConverter {
         return builder.build();
     }
 
+    private static EventParameter convertEventParameter(Model.EventParameter eventParameter) {
+        return ImmutableEventParameter.newBuilder()
+                .setName(eventParameter.getName())
+                .setValue(eventParameter.getValue())
+                .build();
+    }
+
     private static Model.DatabaseEvent convertDatabaseEvent(DatabaseEvent databaseEvent) {
         Model.DatabaseEvent.Builder builder = Model.DatabaseEvent.newBuilder();
         Optional.ofNullable(databaseEvent.getId()).ifPresent(builder::setId);
@@ -162,5 +172,54 @@ public class ModelConverter {
         List<Model.EventParameter> parameters = databaseEvent.getParameters().stream().map(ModelConverter::convertEventParameter).collect(Collectors.toList());
         builder.addAllParameters(parameters);
         return builder.build();
+    }
+
+    private static Model.InMemoryEvent convertInMemoryEvent(InMemoryEvent inMemoryEvent) {
+        Model.InMemoryEvent.Builder builder = Model.InMemoryEvent.newBuilder();
+        Optional.ofNullable(inMemoryEvent.getUei()).ifPresent(builder::setUei);
+        Optional.ofNullable(inMemoryEvent.getSource()).ifPresent(builder::setUei);
+        Optional.ofNullable(inMemoryEvent.getNodeId()).ifPresent(builder::setNodeId);
+        Optional.ofNullable(convertSeverity(inMemoryEvent.getSeverity())).ifPresent(builder::setSeverity);
+        List<Model.EventParameter> parameters = inMemoryEvent.getParameters().stream().map(ModelConverter::convertEventParameter).collect(Collectors.toList());
+        builder.addAllParameters(parameters);
+        return builder.build();
+    }
+
+    public static InMemoryEvent convertInMemoryEvent(Model.InMemoryEvent inMemoryEvent) {
+        if (inMemoryEvent == null) {
+            return null;
+        }
+        ImmutableInMemoryEvent.Builder eventBuilder = ImmutableInMemoryEvent.newBuilder()
+                .setUei(inMemoryEvent.getUei())
+                .setSource(inMemoryEvent.getSource())
+                .setNodeId(Long.valueOf(inMemoryEvent.getNodeId()).intValue())
+                .setSeverity(convertSeverity(inMemoryEvent.getSeverity()));
+        inMemoryEvent.getParametersList().forEach(eventParameter -> {
+            eventBuilder.addParameter(convertEventParameter(eventParameter));
+        });
+        return eventBuilder.build();
+    }
+
+    private static Severity convertSeverity(Model.Severity severity) {
+        if (severity == null) {
+            return null;
+        }
+        switch (severity) {
+            case INDETERMINATE:
+                return Severity.INDETERMINATE;
+            case CLEARED:
+                return Severity.CLEARED;
+            case NORMAL:
+                return Severity.NORMAL;
+            case WARNING:
+                return Severity.WARNING;
+            case MINOR:
+                return Severity.MINOR;
+            case MAJOR:
+                return Severity.MAJOR;
+            case CRITICAL:
+                return Severity.CRITICAL;
+        }
+        return null;
     }
 }

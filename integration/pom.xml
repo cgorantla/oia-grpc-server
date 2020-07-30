@@ -11,9 +11,10 @@
   <artifactId>integration</artifactId>
   <packaging>bundle</packaging>
   <name>OpenNMS :: GRPC :: Integration </name>
+
   <build>
     <!-- Enable below extension and plugin when you need to generate java source files from proto -->
-    <extensions>
+<!--    <extensions>
       <extension>
         <groupId>kr.motd.maven</groupId>
         <artifactId>os-maven-plugin</artifactId>
@@ -22,25 +23,13 @@
     </extensions>
     <plugins>
       <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <extensions>true</extensions>
-        <configuration>
-          <instructions>
-            <Bundle-RequiredExecutionEnvironment>JavaSE-1.8</Bundle-RequiredExecutionEnvironment>
-            <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-            <Bundle-Version>${project.version}</Bundle-Version>
-          </instructions>
-        </configuration>
-      </plugin>
-<!--      <plugin>
         <groupId>org.xolstice.maven.plugins</groupId>
         <artifactId>protobuf-maven-plugin</artifactId>
         <version>0.6.1</version>
         <configuration>
-          <protocArtifact>com.google.protobuf:protoc:3.9.0:exe:${os.detected.classifier}</protocArtifact>
+          <protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}</protocArtifact>
           <pluginId>grpc-java</pluginId>
-          <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.24.0:exe:${os.detected.classifier}</pluginArtifact>
+          <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpcVersion}:exe:${os.detected.classifier}</pluginArtifact>
         </configuration>
         <executions>
           <execution>
@@ -50,20 +39,25 @@
             </goals>
           </execution>
         </executions>
-      </plugin>-->
-    </plugins>
+      </plugin>
+    </plugins>-->
   </build>
 
   <dependencies>
     <dependency>
-      <groupId>com.google.protobuf</groupId>
-      <artifactId>protobuf-java</artifactId>
-      <version>${protobuf.version}</version>
-    </dependency>
-    <dependency>
       <groupId>org.opennms.integration.api</groupId>
       <artifactId>api</artifactId>
       <version>${opennms.api.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opennms.integration.api</groupId>
+      <artifactId>common</artifactId>
+      <version>${opennms.api.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+      <version>${protobuf.version}</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>

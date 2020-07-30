@@ -2362,6 +2362,1225 @@ public final class Model {
 
   }
 
+  public interface InMemoryEventOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:oia.InMemoryEvent)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string uei = 1;</code>
+     */
+    java.lang.String getUei();
+    /**
+     * <code>string uei = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getUeiBytes();
+
+    /**
+     * <code>string source = 2;</code>
+     */
+    java.lang.String getSource();
+    /**
+     * <code>string source = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getSourceBytes();
+
+    /**
+     * <code>.oia.Severity severity = 3;</code>
+     */
+    int getSeverityValue();
+    /**
+     * <code>.oia.Severity severity = 3;</code>
+     */
+    org.opennms.integration.api.v1.proto.Model.Severity getSeverity();
+
+    /**
+     * <code>uint64 node_id = 4;</code>
+     */
+    long getNodeId();
+
+    /**
+     * <code>repeated .oia.EventParameter parameters = 5;</code>
+     */
+    java.util.List<org.opennms.integration.api.v1.proto.Model.EventParameter> 
+        getParametersList();
+    /**
+     * <code>repeated .oia.EventParameter parameters = 5;</code>
+     */
+    org.opennms.integration.api.v1.proto.Model.EventParameter getParameters(int index);
+    /**
+     * <code>repeated .oia.EventParameter parameters = 5;</code>
+     */
+    int getParametersCount();
+    /**
+     * <code>repeated .oia.EventParameter parameters = 5;</code>
+     */
+    java.util.List<? extends org.opennms.integration.api.v1.proto.Model.EventParameterOrBuilder> 
+        getParametersOrBuilderList();
+    /**
+     * <code>repeated .oia.EventParameter parameters = 5;</code>
+     */
+    org.opennms.integration.api.v1.proto.Model.EventParameterOrBuilder getParametersOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code oia.InMemoryEvent}
+   */
+  public  static final class InMemoryEvent extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:oia.InMemoryEvent)
+      InMemoryEventOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use InMemoryEvent.newBuilder() to construct.
+    private InMemoryEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private InMemoryEvent() {
+      uei_ = "";
+      source_ = "";
+      severity_ = 0;
+      parameters_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new InMemoryEvent();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private InMemoryEvent(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              uei_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              source_ = s;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              severity_ = rawValue;
+              break;
+            }
+            case 32: {
+
+              nodeId_ = input.readUInt64();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                parameters_ = new java.util.ArrayList<org.opennms.integration.api.v1.proto.Model.EventParameter>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              parameters_.add(
+                  input.readMessage(org.opennms.integration.api.v1.proto.Model.EventParameter.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          parameters_ = java.util.Collections.unmodifiableList(parameters_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.opennms.integration.api.v1.proto.Model.internal_static_oia_InMemoryEvent_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.opennms.integration.api.v1.proto.Model.internal_static_oia_InMemoryEvent_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.opennms.integration.api.v1.proto.Model.InMemoryEvent.class, org.opennms.integration.api.v1.proto.Model.InMemoryEvent.Builder.class);
+    }
+
+    public static final int UEI_FIELD_NUMBER = 1;
+    private volatile java.lang.Object uei_;
+    /**
+     * <code>string uei = 1;</code>
+     */
+    public java.lang.String getUei() {
+      java.lang.Object ref = uei_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uei_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string uei = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUeiBytes() {
+      java.lang.Object ref = uei_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        uei_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SOURCE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object source_;
+    /**
+     * <code>string source = 2;</code>
+     */
+    public java.lang.String getSource() {
+      java.lang.Object ref = source_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        source_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string source = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSourceBytes() {
+      java.lang.Object ref = source_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        source_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SEVERITY_FIELD_NUMBER = 3;
+    private int severity_;
+    /**
+     * <code>.oia.Severity severity = 3;</code>
+     */
+    public int getSeverityValue() {
+      return severity_;
+    }
+    /**
+     * <code>.oia.Severity severity = 3;</code>
+     */
+    public org.opennms.integration.api.v1.proto.Model.Severity getSeverity() {
+      @SuppressWarnings("deprecation")
+      org.opennms.integration.api.v1.proto.Model.Severity result = org.opennms.integration.api.v1.proto.Model.Severity.valueOf(severity_);
+      return result == null ? org.opennms.integration.api.v1.proto.Model.Severity.UNRECOGNIZED : result;
+    }
+
+    public static final int NODE_ID_FIELD_NUMBER = 4;
+    private long nodeId_;
+    /**
+     * <code>uint64 node_id = 4;</code>
+     */
+    public long getNodeId() {
+      return nodeId_;
+    }
+
+    public static final int PARAMETERS_FIELD_NUMBER = 5;
+    private java.util.List<org.opennms.integration.api.v1.proto.Model.EventParameter> parameters_;
+    /**
+     * <code>repeated .oia.EventParameter parameters = 5;</code>
+     */
+    public java.util.List<org.opennms.integration.api.v1.proto.Model.EventParameter> getParametersList() {
+      return parameters_;
+    }
+    /**
+     * <code>repeated .oia.EventParameter parameters = 5;</code>
+     */
+    public java.util.List<? extends org.opennms.integration.api.v1.proto.Model.EventParameterOrBuilder> 
+        getParametersOrBuilderList() {
+      return parameters_;
+    }
+    /**
+     * <code>repeated .oia.EventParameter parameters = 5;</code>
+     */
+    public int getParametersCount() {
+      return parameters_.size();
+    }
+    /**
+     * <code>repeated .oia.EventParameter parameters = 5;</code>
+     */
+    public org.opennms.integration.api.v1.proto.Model.EventParameter getParameters(int index) {
+      return parameters_.get(index);
+    }
+    /**
+     * <code>repeated .oia.EventParameter parameters = 5;</code>
+     */
+    public org.opennms.integration.api.v1.proto.Model.EventParameterOrBuilder getParametersOrBuilder(
+        int index) {
+      return parameters_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getUeiBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uei_);
+      }
+      if (!getSourceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, source_);
+      }
+      if (severity_ != org.opennms.integration.api.v1.proto.Model.Severity.INDETERMINATE.getNumber()) {
+        output.writeEnum(3, severity_);
+      }
+      if (nodeId_ != 0L) {
+        output.writeUInt64(4, nodeId_);
+      }
+      for (int i = 0; i < parameters_.size(); i++) {
+        output.writeMessage(5, parameters_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getUeiBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uei_);
+      }
+      if (!getSourceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, source_);
+      }
+      if (severity_ != org.opennms.integration.api.v1.proto.Model.Severity.INDETERMINATE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, severity_);
+      }
+      if (nodeId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, nodeId_);
+      }
+      for (int i = 0; i < parameters_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, parameters_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.opennms.integration.api.v1.proto.Model.InMemoryEvent)) {
+        return super.equals(obj);
+      }
+      org.opennms.integration.api.v1.proto.Model.InMemoryEvent other = (org.opennms.integration.api.v1.proto.Model.InMemoryEvent) obj;
+
+      if (!getUei()
+          .equals(other.getUei())) return false;
+      if (!getSource()
+          .equals(other.getSource())) return false;
+      if (severity_ != other.severity_) return false;
+      if (getNodeId()
+          != other.getNodeId()) return false;
+      if (!getParametersList()
+          .equals(other.getParametersList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + UEI_FIELD_NUMBER;
+      hash = (53 * hash) + getUei().hashCode();
+      hash = (37 * hash) + SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getSource().hashCode();
+      hash = (37 * hash) + SEVERITY_FIELD_NUMBER;
+      hash = (53 * hash) + severity_;
+      hash = (37 * hash) + NODE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getNodeId());
+      if (getParametersCount() > 0) {
+        hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
+        hash = (53 * hash) + getParametersList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.opennms.integration.api.v1.proto.Model.InMemoryEvent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opennms.integration.api.v1.proto.Model.InMemoryEvent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opennms.integration.api.v1.proto.Model.InMemoryEvent parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opennms.integration.api.v1.proto.Model.InMemoryEvent parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opennms.integration.api.v1.proto.Model.InMemoryEvent parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.opennms.integration.api.v1.proto.Model.InMemoryEvent parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.opennms.integration.api.v1.proto.Model.InMemoryEvent parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.opennms.integration.api.v1.proto.Model.InMemoryEvent parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.opennms.integration.api.v1.proto.Model.InMemoryEvent parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.opennms.integration.api.v1.proto.Model.InMemoryEvent parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.opennms.integration.api.v1.proto.Model.InMemoryEvent parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.opennms.integration.api.v1.proto.Model.InMemoryEvent parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.opennms.integration.api.v1.proto.Model.InMemoryEvent prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code oia.InMemoryEvent}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:oia.InMemoryEvent)
+        org.opennms.integration.api.v1.proto.Model.InMemoryEventOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.opennms.integration.api.v1.proto.Model.internal_static_oia_InMemoryEvent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.opennms.integration.api.v1.proto.Model.internal_static_oia_InMemoryEvent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.opennms.integration.api.v1.proto.Model.InMemoryEvent.class, org.opennms.integration.api.v1.proto.Model.InMemoryEvent.Builder.class);
+      }
+
+      // Construct using org.opennms.integration.api.v1.proto.Model.InMemoryEvent.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getParametersFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        uei_ = "";
+
+        source_ = "";
+
+        severity_ = 0;
+
+        nodeId_ = 0L;
+
+        if (parametersBuilder_ == null) {
+          parameters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          parametersBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.opennms.integration.api.v1.proto.Model.internal_static_oia_InMemoryEvent_descriptor;
+      }
+
+      @java.lang.Override
+      public org.opennms.integration.api.v1.proto.Model.InMemoryEvent getDefaultInstanceForType() {
+        return org.opennms.integration.api.v1.proto.Model.InMemoryEvent.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.opennms.integration.api.v1.proto.Model.InMemoryEvent build() {
+        org.opennms.integration.api.v1.proto.Model.InMemoryEvent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.opennms.integration.api.v1.proto.Model.InMemoryEvent buildPartial() {
+        org.opennms.integration.api.v1.proto.Model.InMemoryEvent result = new org.opennms.integration.api.v1.proto.Model.InMemoryEvent(this);
+        int from_bitField0_ = bitField0_;
+        result.uei_ = uei_;
+        result.source_ = source_;
+        result.severity_ = severity_;
+        result.nodeId_ = nodeId_;
+        if (parametersBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            parameters_ = java.util.Collections.unmodifiableList(parameters_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.parameters_ = parameters_;
+        } else {
+          result.parameters_ = parametersBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.opennms.integration.api.v1.proto.Model.InMemoryEvent) {
+          return mergeFrom((org.opennms.integration.api.v1.proto.Model.InMemoryEvent)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.opennms.integration.api.v1.proto.Model.InMemoryEvent other) {
+        if (other == org.opennms.integration.api.v1.proto.Model.InMemoryEvent.getDefaultInstance()) return this;
+        if (!other.getUei().isEmpty()) {
+          uei_ = other.uei_;
+          onChanged();
+        }
+        if (!other.getSource().isEmpty()) {
+          source_ = other.source_;
+          onChanged();
+        }
+        if (other.severity_ != 0) {
+          setSeverityValue(other.getSeverityValue());
+        }
+        if (other.getNodeId() != 0L) {
+          setNodeId(other.getNodeId());
+        }
+        if (parametersBuilder_ == null) {
+          if (!other.parameters_.isEmpty()) {
+            if (parameters_.isEmpty()) {
+              parameters_ = other.parameters_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureParametersIsMutable();
+              parameters_.addAll(other.parameters_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.parameters_.isEmpty()) {
+            if (parametersBuilder_.isEmpty()) {
+              parametersBuilder_.dispose();
+              parametersBuilder_ = null;
+              parameters_ = other.parameters_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              parametersBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getParametersFieldBuilder() : null;
+            } else {
+              parametersBuilder_.addAllMessages(other.parameters_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.opennms.integration.api.v1.proto.Model.InMemoryEvent parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.opennms.integration.api.v1.proto.Model.InMemoryEvent) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object uei_ = "";
+      /**
+       * <code>string uei = 1;</code>
+       */
+      public java.lang.String getUei() {
+        java.lang.Object ref = uei_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uei_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string uei = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUeiBytes() {
+        java.lang.Object ref = uei_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          uei_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string uei = 1;</code>
+       */
+      public Builder setUei(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        uei_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uei = 1;</code>
+       */
+      public Builder clearUei() {
+        
+        uei_ = getDefaultInstance().getUei();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string uei = 1;</code>
+       */
+      public Builder setUeiBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        uei_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object source_ = "";
+      /**
+       * <code>string source = 2;</code>
+       */
+      public java.lang.String getSource() {
+        java.lang.Object ref = source_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          source_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string source = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSourceBytes() {
+        java.lang.Object ref = source_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          source_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string source = 2;</code>
+       */
+      public Builder setSource(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        source_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string source = 2;</code>
+       */
+      public Builder clearSource() {
+        
+        source_ = getDefaultInstance().getSource();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string source = 2;</code>
+       */
+      public Builder setSourceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        source_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int severity_ = 0;
+      /**
+       * <code>.oia.Severity severity = 3;</code>
+       */
+      public int getSeverityValue() {
+        return severity_;
+      }
+      /**
+       * <code>.oia.Severity severity = 3;</code>
+       */
+      public Builder setSeverityValue(int value) {
+        severity_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.oia.Severity severity = 3;</code>
+       */
+      public org.opennms.integration.api.v1.proto.Model.Severity getSeverity() {
+        @SuppressWarnings("deprecation")
+        org.opennms.integration.api.v1.proto.Model.Severity result = org.opennms.integration.api.v1.proto.Model.Severity.valueOf(severity_);
+        return result == null ? org.opennms.integration.api.v1.proto.Model.Severity.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.oia.Severity severity = 3;</code>
+       */
+      public Builder setSeverity(org.opennms.integration.api.v1.proto.Model.Severity value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        severity_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.oia.Severity severity = 3;</code>
+       */
+      public Builder clearSeverity() {
+        
+        severity_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long nodeId_ ;
+      /**
+       * <code>uint64 node_id = 4;</code>
+       */
+      public long getNodeId() {
+        return nodeId_;
+      }
+      /**
+       * <code>uint64 node_id = 4;</code>
+       */
+      public Builder setNodeId(long value) {
+        
+        nodeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 node_id = 4;</code>
+       */
+      public Builder clearNodeId() {
+        
+        nodeId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<org.opennms.integration.api.v1.proto.Model.EventParameter> parameters_ =
+        java.util.Collections.emptyList();
+      private void ensureParametersIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          parameters_ = new java.util.ArrayList<org.opennms.integration.api.v1.proto.Model.EventParameter>(parameters_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.opennms.integration.api.v1.proto.Model.EventParameter, org.opennms.integration.api.v1.proto.Model.EventParameter.Builder, org.opennms.integration.api.v1.proto.Model.EventParameterOrBuilder> parametersBuilder_;
+
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public java.util.List<org.opennms.integration.api.v1.proto.Model.EventParameter> getParametersList() {
+        if (parametersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(parameters_);
+        } else {
+          return parametersBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public int getParametersCount() {
+        if (parametersBuilder_ == null) {
+          return parameters_.size();
+        } else {
+          return parametersBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public org.opennms.integration.api.v1.proto.Model.EventParameter getParameters(int index) {
+        if (parametersBuilder_ == null) {
+          return parameters_.get(index);
+        } else {
+          return parametersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public Builder setParameters(
+          int index, org.opennms.integration.api.v1.proto.Model.EventParameter value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.set(index, value);
+          onChanged();
+        } else {
+          parametersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public Builder setParameters(
+          int index, org.opennms.integration.api.v1.proto.Model.EventParameter.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public Builder addParameters(org.opennms.integration.api.v1.proto.Model.EventParameter value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.add(value);
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public Builder addParameters(
+          int index, org.opennms.integration.api.v1.proto.Model.EventParameter value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.add(index, value);
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public Builder addParameters(
+          org.opennms.integration.api.v1.proto.Model.EventParameter.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.add(builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public Builder addParameters(
+          int index, org.opennms.integration.api.v1.proto.Model.EventParameter.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public Builder addAllParameters(
+          java.lang.Iterable<? extends org.opennms.integration.api.v1.proto.Model.EventParameter> values) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, parameters_);
+          onChanged();
+        } else {
+          parametersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public Builder clearParameters() {
+        if (parametersBuilder_ == null) {
+          parameters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          parametersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public Builder removeParameters(int index) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.remove(index);
+          onChanged();
+        } else {
+          parametersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public org.opennms.integration.api.v1.proto.Model.EventParameter.Builder getParametersBuilder(
+          int index) {
+        return getParametersFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public org.opennms.integration.api.v1.proto.Model.EventParameterOrBuilder getParametersOrBuilder(
+          int index) {
+        if (parametersBuilder_ == null) {
+          return parameters_.get(index);  } else {
+          return parametersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public java.util.List<? extends org.opennms.integration.api.v1.proto.Model.EventParameterOrBuilder> 
+           getParametersOrBuilderList() {
+        if (parametersBuilder_ != null) {
+          return parametersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(parameters_);
+        }
+      }
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public org.opennms.integration.api.v1.proto.Model.EventParameter.Builder addParametersBuilder() {
+        return getParametersFieldBuilder().addBuilder(
+            org.opennms.integration.api.v1.proto.Model.EventParameter.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public org.opennms.integration.api.v1.proto.Model.EventParameter.Builder addParametersBuilder(
+          int index) {
+        return getParametersFieldBuilder().addBuilder(
+            index, org.opennms.integration.api.v1.proto.Model.EventParameter.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .oia.EventParameter parameters = 5;</code>
+       */
+      public java.util.List<org.opennms.integration.api.v1.proto.Model.EventParameter.Builder> 
+           getParametersBuilderList() {
+        return getParametersFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.opennms.integration.api.v1.proto.Model.EventParameter, org.opennms.integration.api.v1.proto.Model.EventParameter.Builder, org.opennms.integration.api.v1.proto.Model.EventParameterOrBuilder> 
+          getParametersFieldBuilder() {
+        if (parametersBuilder_ == null) {
+          parametersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.opennms.integration.api.v1.proto.Model.EventParameter, org.opennms.integration.api.v1.proto.Model.EventParameter.Builder, org.opennms.integration.api.v1.proto.Model.EventParameterOrBuilder>(
+                  parameters_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          parameters_ = null;
+        }
+        return parametersBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:oia.InMemoryEvent)
+    }
+
+    // @@protoc_insertion_point(class_scope:oia.InMemoryEvent)
+    private static final org.opennms.integration.api.v1.proto.Model.InMemoryEvent DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.opennms.integration.api.v1.proto.Model.InMemoryEvent();
+    }
+
+    public static org.opennms.integration.api.v1.proto.Model.InMemoryEvent getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InMemoryEvent>
+        PARSER = new com.google.protobuf.AbstractParser<InMemoryEvent>() {
+      @java.lang.Override
+      public InMemoryEvent parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new InMemoryEvent(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<InMemoryEvent> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InMemoryEvent> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.opennms.integration.api.v1.proto.Model.InMemoryEvent getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface IPInterfaceOrBuilder extends
       // @@protoc_insertion_point(interface_extends:oia.IPInterface)
       com.google.protobuf.MessageOrBuilder {
@@ -13366,6 +14585,11 @@ public final class Model {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_oia_DatabaseEvent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_oia_InMemoryEvent_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_oia_InMemoryEvent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_oia_IPInterface_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -13417,48 +14641,51 @@ public final class Model {
       "\n\013model.proto\022\003oia\"\007\n\005Empty\"-\n\016EventPara" +
       "meter\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"Q\n\rDa" +
       "tabaseEvent\022\013\n\003uei\030\001 \001(\t\022\n\n\002id\030\002 \001(\004\022\'\n\n" +
-      "parameters\030\003 \003(\0132\023.oia.EventParameter\"o\n" +
-      "\013IPInterface\022\022\n\nip_address\030\001 \001(\t\022*\n\016snmp" +
-      "_interface\030\002 \001(\0132\022.oia.SNMPInterface\022 \n\t" +
-      "meta_data\030\003 \003(\0132\r.oia.MetaData\"D\n\rSNMPIn" +
-      "terface\022\020\n\010if_descr\030\001 \001(\t\022\017\n\007if_name\030\002 \001" +
-      "(\t\022\020\n\010if_index\030\003 \001(\004\"7\n\010MetaData\022\017\n\007cont" +
-      "ext\030\001 \001(\t\022\013\n\003key\030\002 \001(\t\022\r\n\005value\030\003 \001(\t\"\221\001" +
-      "\n\013Geolocation\022\020\n\010address1\030\001 \001(\t\022\020\n\010addre" +
-      "ss2\030\002 \001(\t\022\014\n\004city\030\003 \001(\t\022\r\n\005state\030\004 \001(\t\022\013" +
-      "\n\003zip\030\005 \001(\t\022\017\n\007country\030\006 \001(\t\022\021\n\tlongitud" +
-      "e\030\007 \001(\001\022\020\n\010latitude\030\010 \001(\001\"\372\001\n\017NodeAssetR" +
-      "ecord\022\016\n\006vendor\030\001 \001(\t\022\024\n\014model_number\030\002 " +
-      "\001(\t\022\023\n\013description\030\003 \001(\t\022\024\n\014asset_number" +
-      "\030\004 \001(\t\022\030\n\020operating_system\030\005 \001(\t\022\016\n\006regi" +
-      "on\030\006 \001(\t\022\020\n\010division\030\007 \001(\t\022\022\n\ndepartment" +
-      "\030\010 \001(\t\022\020\n\010building\030\t \001(\t\022\r\n\005floor\030\n \001(\t\022" +
-      "%\n\013geolocation\030\013 \001(\0132\020.oia.Geolocation\"\203" +
-      "\002\n\004Node\022\n\n\002id\030\001 \001(\004\022\026\n\016foreign_source\030\002 " +
-      "\001(\t\022\022\n\nforeign_id\030\003 \001(\t\022\r\n\005label\030\004 \001(\t\022\020" +
-      "\n\010location\030\005 \001(\t\022*\n\014asset_record\030\006 \001(\0132\024" +
-      ".oia.NodeAssetRecord\022\'\n\rip_interfaces\030\007 " +
-      "\003(\0132\020.oia.IPInterface\022+\n\017snmp_interfaces" +
-      "\030\010 \003(\0132\022.oia.SNMPInterface\022 \n\tmeta_data\030" +
-      "\t \003(\0132\r.oia.MetaData\"\342\003\n\005Alarm\022\025\n\rreduct" +
-      "ion_key\030\001 \001(\t\022\n\n\002id\030\002 \001(\004\022\027\n\004node\030\003 \001(\0132" +
-      "\t.oia.Node\022\034\n\004type\030\004 \001(\0162\016.oia.AlarmType" +
-      "\022\037\n\027managed_object_instance\030\005 \001(\t\022\033\n\023man" +
-      "aged_object_type\030\006 \001(\t\022.\n\nattributes\030\007 \003" +
-      "(\0132\032.oia.Alarm.AttributesEntry\022\037\n\010severi" +
-      "ty\030\010 \001(\0162\r.oia.Severity\022\024\n\014is_situation\030" +
-      "\t \001(\010\022\"\n\016related_alarms\030\n \003(\0132\n.oia.Alar" +
-      "m\022\023\n\013log_message\030\013 \001(\t\022\023\n\013description\030\014 " +
-      "\001(\t\022\027\n\017last_event_time\030\r \001(\004\022\030\n\020first_ev" +
-      "ent_time\030\016 \001(\004\022&\n\nlast_event\030\017 \001(\0132\022.oia" +
-      ".DatabaseEvent\0321\n\017AttributesEntry\022\013\n\003key" +
-      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001*g\n\010Severity\022\021\n" +
-      "\rINDETERMINATE\020\000\022\013\n\007CLEARED\020\001\022\n\n\006NORMAL\020" +
-      "\002\022\013\n\007WARNING\020\003\022\t\n\005MINOR\020\004\022\t\n\005MAJOR\020\005\022\014\n\010" +
-      "CRITICAL\020\006*I\n\tAlarmType\022\026\n\022PROBLEM_WITH_" +
-      "CLEAR\020\000\022\t\n\005CLEAR\020\001\022\031\n\025PROBLEM_WITHOUT_CL" +
-      "EAR\020\002B-\n$org.opennms.integration.api.v1." +
-      "protoZ\005.;oiab\006proto3"
+      "parameters\030\003 \003(\0132\023.oia.EventParameter\"\207\001" +
+      "\n\rInMemoryEvent\022\013\n\003uei\030\001 \001(\t\022\016\n\006source\030\002" +
+      " \001(\t\022\037\n\010severity\030\003 \001(\0162\r.oia.Severity\022\017\n" +
+      "\007node_id\030\004 \001(\004\022\'\n\nparameters\030\005 \003(\0132\023.oia" +
+      ".EventParameter\"o\n\013IPInterface\022\022\n\nip_add" +
+      "ress\030\001 \001(\t\022*\n\016snmp_interface\030\002 \001(\0132\022.oia" +
+      ".SNMPInterface\022 \n\tmeta_data\030\003 \003(\0132\r.oia." +
+      "MetaData\"D\n\rSNMPInterface\022\020\n\010if_descr\030\001 " +
+      "\001(\t\022\017\n\007if_name\030\002 \001(\t\022\020\n\010if_index\030\003 \001(\004\"7" +
+      "\n\010MetaData\022\017\n\007context\030\001 \001(\t\022\013\n\003key\030\002 \001(\t" +
+      "\022\r\n\005value\030\003 \001(\t\"\221\001\n\013Geolocation\022\020\n\010addre" +
+      "ss1\030\001 \001(\t\022\020\n\010address2\030\002 \001(\t\022\014\n\004city\030\003 \001(" +
+      "\t\022\r\n\005state\030\004 \001(\t\022\013\n\003zip\030\005 \001(\t\022\017\n\007country" +
+      "\030\006 \001(\t\022\021\n\tlongitude\030\007 \001(\001\022\020\n\010latitude\030\010 " +
+      "\001(\001\"\372\001\n\017NodeAssetRecord\022\016\n\006vendor\030\001 \001(\t\022" +
+      "\024\n\014model_number\030\002 \001(\t\022\023\n\013description\030\003 \001" +
+      "(\t\022\024\n\014asset_number\030\004 \001(\t\022\030\n\020operating_sy" +
+      "stem\030\005 \001(\t\022\016\n\006region\030\006 \001(\t\022\020\n\010division\030\007" +
+      " \001(\t\022\022\n\ndepartment\030\010 \001(\t\022\020\n\010building\030\t \001" +
+      "(\t\022\r\n\005floor\030\n \001(\t\022%\n\013geolocation\030\013 \001(\0132\020" +
+      ".oia.Geolocation\"\203\002\n\004Node\022\n\n\002id\030\001 \001(\004\022\026\n" +
+      "\016foreign_source\030\002 \001(\t\022\022\n\nforeign_id\030\003 \001(" +
+      "\t\022\r\n\005label\030\004 \001(\t\022\020\n\010location\030\005 \001(\t\022*\n\014as" +
+      "set_record\030\006 \001(\0132\024.oia.NodeAssetRecord\022\'" +
+      "\n\rip_interfaces\030\007 \003(\0132\020.oia.IPInterface\022" +
+      "+\n\017snmp_interfaces\030\010 \003(\0132\022.oia.SNMPInter" +
+      "face\022 \n\tmeta_data\030\t \003(\0132\r.oia.MetaData\"\342" +
+      "\003\n\005Alarm\022\025\n\rreduction_key\030\001 \001(\t\022\n\n\002id\030\002 " +
+      "\001(\004\022\027\n\004node\030\003 \001(\0132\t.oia.Node\022\034\n\004type\030\004 \001" +
+      "(\0162\016.oia.AlarmType\022\037\n\027managed_object_ins" +
+      "tance\030\005 \001(\t\022\033\n\023managed_object_type\030\006 \001(\t" +
+      "\022.\n\nattributes\030\007 \003(\0132\032.oia.Alarm.Attribu" +
+      "tesEntry\022\037\n\010severity\030\010 \001(\0162\r.oia.Severit" +
+      "y\022\024\n\014is_situation\030\t \001(\010\022\"\n\016related_alarm" +
+      "s\030\n \003(\0132\n.oia.Alarm\022\023\n\013log_message\030\013 \001(\t" +
+      "\022\023\n\013description\030\014 \001(\t\022\027\n\017last_event_time" +
+      "\030\r \001(\004\022\030\n\020first_event_time\030\016 \001(\004\022&\n\nlast" +
+      "_event\030\017 \001(\0132\022.oia.DatabaseEvent\0321\n\017Attr" +
+      "ibutesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
+      "\0028\001*g\n\010Severity\022\021\n\rINDETERMINATE\020\000\022\013\n\007CL" +
+      "EARED\020\001\022\n\n\006NORMAL\020\002\022\013\n\007WARNING\020\003\022\t\n\005MINO" +
+      "R\020\004\022\t\n\005MAJOR\020\005\022\014\n\010CRITICAL\020\006*I\n\tAlarmTyp" +
+      "e\022\026\n\022PROBLEM_WITH_CLEAR\020\000\022\t\n\005CLEAR\020\001\022\031\n\025" +
+      "PROBLEM_WITHOUT_CLEAR\020\002B-\n$org.opennms.i" +
+      "ntegration.api.v1.protoZ\005.;oiab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -13482,44 +14709,50 @@ public final class Model {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_oia_DatabaseEvent_descriptor,
         new java.lang.String[] { "Uei", "Id", "Parameters", });
-    internal_static_oia_IPInterface_descriptor =
+    internal_static_oia_InMemoryEvent_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_oia_InMemoryEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_oia_InMemoryEvent_descriptor,
+        new java.lang.String[] { "Uei", "Source", "Severity", "NodeId", "Parameters", });
+    internal_static_oia_IPInterface_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_oia_IPInterface_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_oia_IPInterface_descriptor,
         new java.lang.String[] { "IpAddress", "SnmpInterface", "MetaData", });
     internal_static_oia_SNMPInterface_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_oia_SNMPInterface_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_oia_SNMPInterface_descriptor,
         new java.lang.String[] { "IfDescr", "IfName", "IfIndex", });
     internal_static_oia_MetaData_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_oia_MetaData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_oia_MetaData_descriptor,
         new java.lang.String[] { "Context", "Key", "Value", });
     internal_static_oia_Geolocation_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_oia_Geolocation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_oia_Geolocation_descriptor,
         new java.lang.String[] { "Address1", "Address2", "City", "State", "Zip", "Country", "Longitude", "Latitude", });
     internal_static_oia_NodeAssetRecord_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_oia_NodeAssetRecord_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_oia_NodeAssetRecord_descriptor,
         new java.lang.String[] { "Vendor", "ModelNumber", "Description", "AssetNumber", "OperatingSystem", "Region", "Division", "Department", "Building", "Floor", "Geolocation", });
     internal_static_oia_Node_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_oia_Node_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_oia_Node_descriptor,
         new java.lang.String[] { "Id", "ForeignSource", "ForeignId", "Label", "Location", "AssetRecord", "IpInterfaces", "SnmpInterfaces", "MetaData", });
     internal_static_oia_Alarm_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_oia_Alarm_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_oia_Alarm_descriptor,

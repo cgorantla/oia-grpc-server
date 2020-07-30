@@ -3,12 +3,19 @@
 
   <repository>mvn:org.opennms.integration.api/karaf-features/${opennms.api.version}/xml</repository>
 
-  <feature name="opennms-integration-api-grpc-server" description="OpenNMS :: Integration :: API :: GRPC :: Server " version="${project.version}">
+
+  <feature name="opennms-integration-api-grpc-common" description="OpenNMS :: Integration :: API :: GRPC :: Common" version="${project.version}">
     <feature dependency="true">aries-blueprint</feature>
     <feature version="${opennms.api.version}" dependency="true">opennms-integration-api</feature>
-    <bundle>mvn:org.opennms.grpc.api/osgi/${project.version}</bundle>
-    <bundle>mvn:org.opennms.grpc.api/integration/${project.version}</bundle>
     <bundle dependency="true">mvn:com.google.guava/guava/${guavagRPCVersion}</bundle>
+    <bundle>mvn:org.opennms.grpc.api/osgi/${project.version}</bundle>
   </feature>
+
+  <feature name="opennms-integration-api-grpc-server" description="OpenNMS :: Integration :: API :: GRPC :: Server " version="${project.version}">
+    <feature>opennms-integration-api-grpc-common</feature>
+    <bundle>mvn:org.opennms.grpc.api/integration/${project.version}</bundle>
+  </feature>
+
+
 
 </features>

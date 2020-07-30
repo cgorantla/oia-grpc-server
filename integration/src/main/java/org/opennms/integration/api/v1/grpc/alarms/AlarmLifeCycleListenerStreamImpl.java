@@ -50,6 +50,7 @@ public class AlarmLifeCycleListenerStreamImpl extends AlarmLifecycleListenerGrpc
     @Override
     public void handleAlarmSnapshot(Model.Empty request,
                                     io.grpc.stub.StreamObserver<Alarms.AlarmsList> responseObserver) {
+
         snapShotObserver.add(responseObserver);
     }
 
