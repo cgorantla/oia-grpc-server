@@ -1,10 +1,18 @@
 package org.opennms.integration.api.v1.proto;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
+import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
 import static io.grpc.stub.ClientCalls.blockingUnaryCall;
 import static io.grpc.stub.ClientCalls.futureUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
@@ -23,7 +31,7 @@ public final class EventForwarderGrpc {
       org.opennms.integration.api.v1.proto.Model.Empty> getSendAsyncMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "sendAsync",
+      fullMethodName = SERVICE_NAME + '/' + "SendAsync",
       requestType = org.opennms.integration.api.v1.proto.Model.InMemoryEvent.class,
       responseType = org.opennms.integration.api.v1.proto.Model.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -36,13 +44,13 @@ public final class EventForwarderGrpc {
           EventForwarderGrpc.getSendAsyncMethod = getSendAsyncMethod =
               io.grpc.MethodDescriptor.<org.opennms.integration.api.v1.proto.Model.InMemoryEvent, org.opennms.integration.api.v1.proto.Model.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "sendAsync"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SendAsync"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.opennms.integration.api.v1.proto.Model.InMemoryEvent.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.opennms.integration.api.v1.proto.Model.Empty.getDefaultInstance()))
-              .setSchemaDescriptor(new EventForwarderMethodDescriptorSupplier("sendAsync"))
+              .setSchemaDescriptor(new EventForwarderMethodDescriptorSupplier("SendAsync"))
               .build();
         }
       }
@@ -54,7 +62,7 @@ public final class EventForwarderGrpc {
       org.opennms.integration.api.v1.proto.Events.Ack> getSendSyncMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "sendSync",
+      fullMethodName = SERVICE_NAME + '/' + "SendSync",
       requestType = org.opennms.integration.api.v1.proto.Model.InMemoryEvent.class,
       responseType = org.opennms.integration.api.v1.proto.Events.Ack.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -67,13 +75,13 @@ public final class EventForwarderGrpc {
           EventForwarderGrpc.getSendSyncMethod = getSendSyncMethod =
               io.grpc.MethodDescriptor.<org.opennms.integration.api.v1.proto.Model.InMemoryEvent, org.opennms.integration.api.v1.proto.Events.Ack>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "sendSync"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SendSync"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.opennms.integration.api.v1.proto.Model.InMemoryEvent.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.opennms.integration.api.v1.proto.Events.Ack.getDefaultInstance()))
-              .setSchemaDescriptor(new EventForwarderMethodDescriptorSupplier("sendSync"))
+              .setSchemaDescriptor(new EventForwarderMethodDescriptorSupplier("SendSync"))
               .build();
         }
       }
@@ -120,7 +128,7 @@ public final class EventForwarderGrpc {
 
     /**
      * <pre>
-     * Send the given event synchronously with ack when it is successful
+     * Send the given event synchronously with ack when it is successful.
      * </pre>
      */
     public void sendSync(org.opennms.integration.api.v1.proto.Model.InMemoryEvent request,
@@ -179,7 +187,7 @@ public final class EventForwarderGrpc {
 
     /**
      * <pre>
-     * Send the given event synchronously with ack when it is successful
+     * Send the given event synchronously with ack when it is successful.
      * </pre>
      */
     public void sendSync(org.opennms.integration.api.v1.proto.Model.InMemoryEvent request,
@@ -219,7 +227,7 @@ public final class EventForwarderGrpc {
 
     /**
      * <pre>
-     * Send the given event synchronously with ack when it is successful
+     * Send the given event synchronously with ack when it is successful.
      * </pre>
      */
     public org.opennms.integration.api.v1.proto.Events.Ack sendSync(org.opennms.integration.api.v1.proto.Model.InMemoryEvent request) {
@@ -259,7 +267,7 @@ public final class EventForwarderGrpc {
 
     /**
      * <pre>
-     * Send the given event synchronously with ack when it is successful
+     * Send the given event synchronously with ack when it is successful.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<org.opennms.integration.api.v1.proto.Events.Ack> sendSync(

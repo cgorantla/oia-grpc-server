@@ -5,14 +5,17 @@
 
   <reference id="eventForwarder" interface="org.opennms.integration.api.v1.events.EventForwarder" />
 
-  <bean id="gprcServer" class="org.opennms.integration.api.v1.grpc.OnmsIntegrationServer"
+  <reference id="eventSubscriptionService" interface="org.opennms.integration.api.v1.events.EventSubscriptionService" />
+
+  <bean id="gprcIntegrationServer" class="org.opennms.integration.api.v1.grpc.OnmsIntegrationServer"
         init-method="start" destroy-method="shutdown">
     <argument ref="eventForwarder"/>
+    <argument ref="eventSubscriptionService"/>
   </bean>
 
   <service interface="org.opennms.integration.api.v1.alarms.AlarmLifecycleListener">
     <bean class="org.opennms.integration.api.v1.grpc.alarms.AlarmLifeCycleListenerImpl">
-      <argument ref="gprcServer"/>
+      <argument ref="gprcIntegrationServer"/>
     </bean>
   </service>
 

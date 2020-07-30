@@ -1,18 +1,9 @@
 package org.opennms.integration.api.v1.proto;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
 import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
@@ -34,7 +25,7 @@ public final class AlarmLifecycleListenerGrpc {
       fullMethodName = SERVICE_NAME + '/' + "HandleAlarmSnapshot",
       requestType = org.opennms.integration.api.v1.proto.Model.Empty.class,
       responseType = org.opennms.integration.api.v1.proto.Alarms.AlarmsList.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.opennms.integration.api.v1.proto.Model.Empty,
       org.opennms.integration.api.v1.proto.Alarms.AlarmsList> getHandleAlarmSnapshotMethod() {
     io.grpc.MethodDescriptor<org.opennms.integration.api.v1.proto.Model.Empty, org.opennms.integration.api.v1.proto.Alarms.AlarmsList> getHandleAlarmSnapshotMethod;
@@ -43,7 +34,7 @@ public final class AlarmLifecycleListenerGrpc {
         if ((getHandleAlarmSnapshotMethod = AlarmLifecycleListenerGrpc.getHandleAlarmSnapshotMethod) == null) {
           AlarmLifecycleListenerGrpc.getHandleAlarmSnapshotMethod = getHandleAlarmSnapshotMethod =
               io.grpc.MethodDescriptor.<org.opennms.integration.api.v1.proto.Model.Empty, org.opennms.integration.api.v1.proto.Alarms.AlarmsList>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "HandleAlarmSnapshot"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
@@ -183,7 +174,7 @@ public final class AlarmLifecycleListenerGrpc {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getHandleAlarmSnapshotMethod(),
-            asyncUnaryCall(
+            asyncServerStreamingCall(
               new MethodHandlers<
                 org.opennms.integration.api.v1.proto.Model.Empty,
                 org.opennms.integration.api.v1.proto.Alarms.AlarmsList>(
@@ -231,7 +222,7 @@ public final class AlarmLifecycleListenerGrpc {
      */
     public void handleAlarmSnapshot(org.opennms.integration.api.v1.proto.Model.Empty request,
         io.grpc.stub.StreamObserver<org.opennms.integration.api.v1.proto.Alarms.AlarmsList> responseObserver) {
-      asyncUnaryCall(
+      asyncServerStreamingCall(
           getChannel().newCall(getHandleAlarmSnapshotMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -283,8 +274,9 @@ public final class AlarmLifecycleListenerGrpc {
      * Periodically invoked with the complete list of alarms as stored in the database.
      * </pre>
      */
-    public org.opennms.integration.api.v1.proto.Alarms.AlarmsList handleAlarmSnapshot(org.opennms.integration.api.v1.proto.Model.Empty request) {
-      return blockingUnaryCall(
+    public java.util.Iterator<org.opennms.integration.api.v1.proto.Alarms.AlarmsList> handleAlarmSnapshot(
+        org.opennms.integration.api.v1.proto.Model.Empty request) {
+      return blockingServerStreamingCall(
           getChannel(), getHandleAlarmSnapshotMethod(), getCallOptions(), request);
     }
 
@@ -329,17 +321,6 @@ public final class AlarmLifecycleListenerGrpc {
     protected AlarmLifecycleListenerFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new AlarmLifecycleListenerFutureStub(channel, callOptions);
-    }
-
-    /**
-     * <pre>
-     * Periodically invoked with the complete list of alarms as stored in the database.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<org.opennms.integration.api.v1.proto.Alarms.AlarmsList> handleAlarmSnapshot(
-        org.opennms.integration.api.v1.proto.Model.Empty request) {
-      return futureUnaryCall(
-          getChannel().newCall(getHandleAlarmSnapshotMethod(), getCallOptions()), request);
     }
   }
 

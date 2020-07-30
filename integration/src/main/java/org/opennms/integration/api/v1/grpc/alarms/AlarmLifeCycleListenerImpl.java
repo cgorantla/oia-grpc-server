@@ -42,6 +42,7 @@ import org.opennms.integration.api.v1.proto.Model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import io.grpc.stub.ServerCallStreamObserver;
 import io.grpc.stub.StreamObserver;
 
 public class AlarmLifeCycleListenerImpl implements AlarmLifecycleListener {
@@ -60,6 +61,12 @@ public class AlarmLifeCycleListenerImpl implements AlarmLifecycleListener {
         if (observers.isEmpty()) {
             return;
         }
+
+        observers.removeIf(ob -> {
+            ServerCallStreamObserver streamObserver = (ServerCallStreamObserver) ob;
+            return streamObserver.isCancelled();
+        });
+
         List<Model.Alarm> protoAlarms = alarms.stream().map(ModelConverter::buildAlarmProto).collect(Collectors.toList());
         Alarms.AlarmsList.Builder builder = Alarms.AlarmsList.newBuilder();
         builder.addAllAlarms(protoAlarms);
@@ -78,6 +85,11 @@ public class AlarmLifeCycleListenerImpl implements AlarmLifecycleListener {
         if (observers.isEmpty()) {
             return;
         }
+        observers.removeIf(ob -> {
+            ServerCallStreamObserver streamObserver = (ServerCallStreamObserver) ob;
+            return streamObserver.isCancelled();
+        });
+
         observers.forEach(observer -> {
             try {
                 observer.onNext(buildAlarmProto(alarm));
@@ -93,6 +105,12 @@ public class AlarmLifeCycleListenerImpl implements AlarmLifecycleListener {
         if (observers.isEmpty()) {
             return;
         }
+
+        observers.removeIf(ob -> {
+            ServerCallStreamObserver streamObserver = (ServerCallStreamObserver) ob;
+            return streamObserver.isCancelled();
+        });
+
         Alarms.DeleteAlarm deleteAlarm = Alarms.DeleteAlarm.newBuilder().setId(alarmId)
                 .setReductionKey(reductionKey).build();
         observers.forEach(observer -> {

@@ -808,15 +808,18 @@ public final class Alarms {
 
     /**
      * <code>uint64 id = 1;</code>
+     * @return The id.
      */
     long getId();
 
     /**
      * <code>string reduction_key = 2;</code>
+     * @return The reductionKey.
      */
     java.lang.String getReductionKey();
     /**
      * <code>string reduction_key = 2;</code>
+     * @return The bytes for reductionKey.
      */
     com.google.protobuf.ByteString
         getReductionKeyBytes();
@@ -914,6 +917,7 @@ public final class Alarms {
     private long id_;
     /**
      * <code>uint64 id = 1;</code>
+     * @return The id.
      */
     public long getId() {
       return id_;
@@ -923,6 +927,7 @@ public final class Alarms {
     private volatile java.lang.Object reductionKey_;
     /**
      * <code>string reduction_key = 2;</code>
+     * @return The reductionKey.
      */
     public java.lang.String getReductionKey() {
       java.lang.Object ref = reductionKey_;
@@ -938,6 +943,7 @@ public final class Alarms {
     }
     /**
      * <code>string reduction_key = 2;</code>
+     * @return The bytes for reductionKey.
      */
     public com.google.protobuf.ByteString
         getReductionKeyBytes() {
@@ -1276,12 +1282,15 @@ public final class Alarms {
       private long id_ ;
       /**
        * <code>uint64 id = 1;</code>
+       * @return The id.
        */
       public long getId() {
         return id_;
       }
       /**
        * <code>uint64 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(long value) {
         
@@ -1291,6 +1300,7 @@ public final class Alarms {
       }
       /**
        * <code>uint64 id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
         
@@ -1302,6 +1312,7 @@ public final class Alarms {
       private java.lang.Object reductionKey_ = "";
       /**
        * <code>string reduction_key = 2;</code>
+       * @return The reductionKey.
        */
       public java.lang.String getReductionKey() {
         java.lang.Object ref = reductionKey_;
@@ -1317,6 +1328,7 @@ public final class Alarms {
       }
       /**
        * <code>string reduction_key = 2;</code>
+       * @return The bytes for reductionKey.
        */
       public com.google.protobuf.ByteString
           getReductionKeyBytes() {
@@ -1333,6 +1345,8 @@ public final class Alarms {
       }
       /**
        * <code>string reduction_key = 2;</code>
+       * @param value The reductionKey to set.
+       * @return This builder for chaining.
        */
       public Builder setReductionKey(
           java.lang.String value) {
@@ -1346,6 +1360,7 @@ public final class Alarms {
       }
       /**
        * <code>string reduction_key = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearReductionKey() {
         
@@ -1355,6 +1370,8 @@ public final class Alarms {
       }
       /**
        * <code>string reduction_key = 2;</code>
+       * @param value The bytes for reductionKey to set.
+       * @return This builder for chaining.
        */
       public Builder setReductionKeyBytes(
           com.google.protobuf.ByteString value) {
@@ -1442,13 +1459,13 @@ public final class Alarms {
       "\n\014alarms.proto\022\003oia\032\013model.proto\"(\n\nAlar" +
       "msList\022\032\n\006alarms\030\001 \003(\0132\n.oia.Alarm\"0\n\013De" +
       "leteAlarm\022\n\n\002id\030\001 \001(\004\022\025\n\rreduction_key\030\002" +
-      " \001(\t2\275\001\n\026AlarmLifecycleListener\0224\n\023Handl" +
+      " \001(\t2\277\001\n\026AlarmLifecycleListener\0226\n\023Handl" +
       "eAlarmSnapshot\022\n.oia.Empty\032\017.oia.AlarmsL" +
-      "ist\"\000\0225\n\027HandleNewOrUpdatedAlarm\022\n.oia.E" +
-      "mpty\032\n.oia.Alarm\"\0000\001\0226\n\022HandleDeletedAla" +
-      "rm\022\n.oia.Empty\032\020.oia.DeleteAlarm\"\0000\001B-\n$" +
-      "org.opennms.integration.api.v1.protoZ\005.;" +
-      "oiab\006proto3"
+      "ist\"\0000\001\0225\n\027HandleNewOrUpdatedAlarm\022\n.oia" +
+      ".Empty\032\n.oia.Alarm\"\0000\001\0226\n\022HandleDeletedA" +
+      "larm\022\n.oia.Empty\032\020.oia.DeleteAlarm\"\0000\001B-" +
+      "\n$org.opennms.integration.api.v1.protoZ\005" +
+      ".;oiab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

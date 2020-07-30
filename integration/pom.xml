@@ -11,10 +11,9 @@
   <artifactId>integration</artifactId>
   <packaging>bundle</packaging>
   <name>OpenNMS :: GRPC :: Integration </name>
-
-  <build>
-    <!-- Enable below extension and plugin when you need to generate java source files from proto -->
-<!--    <extensions>
+<!--  <build>
+    &lt;!&ndash; Enable below extension and plugin when you need to generate java source files from proto &ndash;&gt;
+    <extensions>
       <extension>
         <groupId>kr.motd.maven</groupId>
         <artifactId>os-maven-plugin</artifactId>
@@ -40,8 +39,8 @@
           </execution>
         </executions>
       </plugin>
-    </plugins>-->
-  </build>
+    </plugins>
+  </build>-->
 
   <dependencies>
     <dependency>

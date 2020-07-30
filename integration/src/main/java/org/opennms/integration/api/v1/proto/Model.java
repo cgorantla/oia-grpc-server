@@ -89,6 +89,8 @@ public final class Model {
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -96,6 +98,10 @@ public final class Model {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static Severity forNumber(int value) {
       switch (value) {
         case 0: return INDETERMINATE;
@@ -200,6 +206,8 @@ public final class Model {
     }
 
     /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -207,6 +215,10 @@ public final class Model {
       return forNumber(value);
     }
 
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
     public static AlarmType forNumber(int value) {
       switch (value) {
         case 0: return PROBLEM_WITH_CLEAR;
@@ -688,20 +700,24 @@ public final class Model {
 
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
      * <code>string value = 2;</code>
+     * @return The value.
      */
     java.lang.String getValue();
     /**
      * <code>string value = 2;</code>
+     * @return The bytes for value.
      */
     com.google.protobuf.ByteString
         getValueBytes();
@@ -801,6 +817,7 @@ public final class Model {
     private volatile java.lang.Object name_;
     /**
      * <code>string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -816,6 +833,7 @@ public final class Model {
     }
     /**
      * <code>string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -835,6 +853,7 @@ public final class Model {
     private volatile java.lang.Object value_;
     /**
      * <code>string value = 2;</code>
+     * @return The value.
      */
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
@@ -850,6 +869,7 @@ public final class Model {
     }
     /**
      * <code>string value = 2;</code>
+     * @return The bytes for value.
      */
     public com.google.protobuf.ByteString
         getValueBytes() {
@@ -1187,6 +1207,7 @@ public final class Model {
       private java.lang.Object name_ = "";
       /**
        * <code>string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1202,6 +1223,7 @@ public final class Model {
       }
       /**
        * <code>string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1218,6 +1240,8 @@ public final class Model {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -1231,6 +1255,7 @@ public final class Model {
       }
       /**
        * <code>string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         
@@ -1240,6 +1265,8 @@ public final class Model {
       }
       /**
        * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1256,6 +1283,7 @@ public final class Model {
       private java.lang.Object value_ = "";
       /**
        * <code>string value = 2;</code>
+       * @return The value.
        */
       public java.lang.String getValue() {
         java.lang.Object ref = value_;
@@ -1271,6 +1299,7 @@ public final class Model {
       }
       /**
        * <code>string value = 2;</code>
+       * @return The bytes for value.
        */
       public com.google.protobuf.ByteString
           getValueBytes() {
@@ -1287,6 +1316,8 @@ public final class Model {
       }
       /**
        * <code>string value = 2;</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
        */
       public Builder setValue(
           java.lang.String value) {
@@ -1300,6 +1331,7 @@ public final class Model {
       }
       /**
        * <code>string value = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearValue() {
         
@@ -1309,6 +1341,8 @@ public final class Model {
       }
       /**
        * <code>string value = 2;</code>
+       * @param value The bytes for value to set.
+       * @return This builder for chaining.
        */
       public Builder setValueBytes(
           com.google.protobuf.ByteString value) {
@@ -1380,16 +1414,19 @@ public final class Model {
 
     /**
      * <code>string uei = 1;</code>
+     * @return The uei.
      */
     java.lang.String getUei();
     /**
      * <code>string uei = 1;</code>
+     * @return The bytes for uei.
      */
     com.google.protobuf.ByteString
         getUeiBytes();
 
     /**
      * <code>uint64 id = 2;</code>
+     * @return The id.
      */
     long getId();
 
@@ -1524,6 +1561,7 @@ public final class Model {
     private volatile java.lang.Object uei_;
     /**
      * <code>string uei = 1;</code>
+     * @return The uei.
      */
     public java.lang.String getUei() {
       java.lang.Object ref = uei_;
@@ -1539,6 +1577,7 @@ public final class Model {
     }
     /**
      * <code>string uei = 1;</code>
+     * @return The bytes for uei.
      */
     public com.google.protobuf.ByteString
         getUeiBytes() {
@@ -1558,6 +1597,7 @@ public final class Model {
     private long id_;
     /**
      * <code>uint64 id = 2;</code>
+     * @return The id.
      */
     public long getId() {
       return id_;
@@ -1978,6 +2018,7 @@ public final class Model {
       private java.lang.Object uei_ = "";
       /**
        * <code>string uei = 1;</code>
+       * @return The uei.
        */
       public java.lang.String getUei() {
         java.lang.Object ref = uei_;
@@ -1993,6 +2034,7 @@ public final class Model {
       }
       /**
        * <code>string uei = 1;</code>
+       * @return The bytes for uei.
        */
       public com.google.protobuf.ByteString
           getUeiBytes() {
@@ -2009,6 +2051,8 @@ public final class Model {
       }
       /**
        * <code>string uei = 1;</code>
+       * @param value The uei to set.
+       * @return This builder for chaining.
        */
       public Builder setUei(
           java.lang.String value) {
@@ -2022,6 +2066,7 @@ public final class Model {
       }
       /**
        * <code>string uei = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearUei() {
         
@@ -2031,6 +2076,8 @@ public final class Model {
       }
       /**
        * <code>string uei = 1;</code>
+       * @param value The bytes for uei to set.
+       * @return This builder for chaining.
        */
       public Builder setUeiBytes(
           com.google.protobuf.ByteString value) {
@@ -2047,12 +2094,15 @@ public final class Model {
       private long id_ ;
       /**
        * <code>uint64 id = 2;</code>
+       * @return The id.
        */
       public long getId() {
         return id_;
       }
       /**
        * <code>uint64 id = 2;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(long value) {
         
@@ -2062,6 +2112,7 @@ public final class Model {
       }
       /**
        * <code>uint64 id = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
         
@@ -2368,35 +2419,42 @@ public final class Model {
 
     /**
      * <code>string uei = 1;</code>
+     * @return The uei.
      */
     java.lang.String getUei();
     /**
      * <code>string uei = 1;</code>
+     * @return The bytes for uei.
      */
     com.google.protobuf.ByteString
         getUeiBytes();
 
     /**
      * <code>string source = 2;</code>
+     * @return The source.
      */
     java.lang.String getSource();
     /**
      * <code>string source = 2;</code>
+     * @return The bytes for source.
      */
     com.google.protobuf.ByteString
         getSourceBytes();
 
     /**
      * <code>.oia.Severity severity = 3;</code>
+     * @return The enum numeric value on the wire for severity.
      */
     int getSeverityValue();
     /**
      * <code>.oia.Severity severity = 3;</code>
+     * @return The severity.
      */
     org.opennms.integration.api.v1.proto.Model.Severity getSeverity();
 
     /**
      * <code>uint64 node_id = 4;</code>
+     * @return The nodeId.
      */
     long getNodeId();
 
@@ -2545,6 +2603,7 @@ public final class Model {
     private volatile java.lang.Object uei_;
     /**
      * <code>string uei = 1;</code>
+     * @return The uei.
      */
     public java.lang.String getUei() {
       java.lang.Object ref = uei_;
@@ -2560,6 +2619,7 @@ public final class Model {
     }
     /**
      * <code>string uei = 1;</code>
+     * @return The bytes for uei.
      */
     public com.google.protobuf.ByteString
         getUeiBytes() {
@@ -2579,6 +2639,7 @@ public final class Model {
     private volatile java.lang.Object source_;
     /**
      * <code>string source = 2;</code>
+     * @return The source.
      */
     public java.lang.String getSource() {
       java.lang.Object ref = source_;
@@ -2594,6 +2655,7 @@ public final class Model {
     }
     /**
      * <code>string source = 2;</code>
+     * @return The bytes for source.
      */
     public com.google.protobuf.ByteString
         getSourceBytes() {
@@ -2613,12 +2675,14 @@ public final class Model {
     private int severity_;
     /**
      * <code>.oia.Severity severity = 3;</code>
+     * @return The enum numeric value on the wire for severity.
      */
     public int getSeverityValue() {
       return severity_;
     }
     /**
      * <code>.oia.Severity severity = 3;</code>
+     * @return The severity.
      */
     public org.opennms.integration.api.v1.proto.Model.Severity getSeverity() {
       @SuppressWarnings("deprecation")
@@ -2630,6 +2694,7 @@ public final class Model {
     private long nodeId_;
     /**
      * <code>uint64 node_id = 4;</code>
+     * @return The nodeId.
      */
     public long getNodeId() {
       return nodeId_;
@@ -3083,6 +3148,7 @@ public final class Model {
       private java.lang.Object uei_ = "";
       /**
        * <code>string uei = 1;</code>
+       * @return The uei.
        */
       public java.lang.String getUei() {
         java.lang.Object ref = uei_;
@@ -3098,6 +3164,7 @@ public final class Model {
       }
       /**
        * <code>string uei = 1;</code>
+       * @return The bytes for uei.
        */
       public com.google.protobuf.ByteString
           getUeiBytes() {
@@ -3114,6 +3181,8 @@ public final class Model {
       }
       /**
        * <code>string uei = 1;</code>
+       * @param value The uei to set.
+       * @return This builder for chaining.
        */
       public Builder setUei(
           java.lang.String value) {
@@ -3127,6 +3196,7 @@ public final class Model {
       }
       /**
        * <code>string uei = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearUei() {
         
@@ -3136,6 +3206,8 @@ public final class Model {
       }
       /**
        * <code>string uei = 1;</code>
+       * @param value The bytes for uei to set.
+       * @return This builder for chaining.
        */
       public Builder setUeiBytes(
           com.google.protobuf.ByteString value) {
@@ -3152,6 +3224,7 @@ public final class Model {
       private java.lang.Object source_ = "";
       /**
        * <code>string source = 2;</code>
+       * @return The source.
        */
       public java.lang.String getSource() {
         java.lang.Object ref = source_;
@@ -3167,6 +3240,7 @@ public final class Model {
       }
       /**
        * <code>string source = 2;</code>
+       * @return The bytes for source.
        */
       public com.google.protobuf.ByteString
           getSourceBytes() {
@@ -3183,6 +3257,8 @@ public final class Model {
       }
       /**
        * <code>string source = 2;</code>
+       * @param value The source to set.
+       * @return This builder for chaining.
        */
       public Builder setSource(
           java.lang.String value) {
@@ -3196,6 +3272,7 @@ public final class Model {
       }
       /**
        * <code>string source = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSource() {
         
@@ -3205,6 +3282,8 @@ public final class Model {
       }
       /**
        * <code>string source = 2;</code>
+       * @param value The bytes for source to set.
+       * @return This builder for chaining.
        */
       public Builder setSourceBytes(
           com.google.protobuf.ByteString value) {
@@ -3221,12 +3300,15 @@ public final class Model {
       private int severity_ = 0;
       /**
        * <code>.oia.Severity severity = 3;</code>
+       * @return The enum numeric value on the wire for severity.
        */
       public int getSeverityValue() {
         return severity_;
       }
       /**
        * <code>.oia.Severity severity = 3;</code>
+       * @param value The enum numeric value on the wire for severity to set.
+       * @return This builder for chaining.
        */
       public Builder setSeverityValue(int value) {
         severity_ = value;
@@ -3235,6 +3317,7 @@ public final class Model {
       }
       /**
        * <code>.oia.Severity severity = 3;</code>
+       * @return The severity.
        */
       public org.opennms.integration.api.v1.proto.Model.Severity getSeverity() {
         @SuppressWarnings("deprecation")
@@ -3243,6 +3326,8 @@ public final class Model {
       }
       /**
        * <code>.oia.Severity severity = 3;</code>
+       * @param value The severity to set.
+       * @return This builder for chaining.
        */
       public Builder setSeverity(org.opennms.integration.api.v1.proto.Model.Severity value) {
         if (value == null) {
@@ -3255,6 +3340,7 @@ public final class Model {
       }
       /**
        * <code>.oia.Severity severity = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSeverity() {
         
@@ -3266,12 +3352,15 @@ public final class Model {
       private long nodeId_ ;
       /**
        * <code>uint64 node_id = 4;</code>
+       * @return The nodeId.
        */
       public long getNodeId() {
         return nodeId_;
       }
       /**
        * <code>uint64 node_id = 4;</code>
+       * @param value The nodeId to set.
+       * @return This builder for chaining.
        */
       public Builder setNodeId(long value) {
         
@@ -3281,6 +3370,7 @@ public final class Model {
       }
       /**
        * <code>uint64 node_id = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearNodeId() {
         
@@ -3587,20 +3677,24 @@ public final class Model {
 
     /**
      * <code>string ip_address = 1;</code>
+     * @return The ipAddress.
      */
     java.lang.String getIpAddress();
     /**
      * <code>string ip_address = 1;</code>
+     * @return The bytes for ipAddress.
      */
     com.google.protobuf.ByteString
         getIpAddressBytes();
 
     /**
      * <code>.oia.SNMPInterface snmp_interface = 2;</code>
+     * @return Whether the snmpInterface field is set.
      */
     boolean hasSnmpInterface();
     /**
      * <code>.oia.SNMPInterface snmp_interface = 2;</code>
+     * @return The snmpInterface.
      */
     org.opennms.integration.api.v1.proto.Model.SNMPInterface getSnmpInterface();
     /**
@@ -3747,6 +3841,7 @@ public final class Model {
     private volatile java.lang.Object ipAddress_;
     /**
      * <code>string ip_address = 1;</code>
+     * @return The ipAddress.
      */
     public java.lang.String getIpAddress() {
       java.lang.Object ref = ipAddress_;
@@ -3762,6 +3857,7 @@ public final class Model {
     }
     /**
      * <code>string ip_address = 1;</code>
+     * @return The bytes for ipAddress.
      */
     public com.google.protobuf.ByteString
         getIpAddressBytes() {
@@ -3781,12 +3877,14 @@ public final class Model {
     private org.opennms.integration.api.v1.proto.Model.SNMPInterface snmpInterface_;
     /**
      * <code>.oia.SNMPInterface snmp_interface = 2;</code>
+     * @return Whether the snmpInterface field is set.
      */
     public boolean hasSnmpInterface() {
       return snmpInterface_ != null;
     }
     /**
      * <code>.oia.SNMPInterface snmp_interface = 2;</code>
+     * @return The snmpInterface.
      */
     public org.opennms.integration.api.v1.proto.Model.SNMPInterface getSnmpInterface() {
       return snmpInterface_ == null ? org.opennms.integration.api.v1.proto.Model.SNMPInterface.getDefaultInstance() : snmpInterface_;
@@ -4225,6 +4323,7 @@ public final class Model {
       private java.lang.Object ipAddress_ = "";
       /**
        * <code>string ip_address = 1;</code>
+       * @return The ipAddress.
        */
       public java.lang.String getIpAddress() {
         java.lang.Object ref = ipAddress_;
@@ -4240,6 +4339,7 @@ public final class Model {
       }
       /**
        * <code>string ip_address = 1;</code>
+       * @return The bytes for ipAddress.
        */
       public com.google.protobuf.ByteString
           getIpAddressBytes() {
@@ -4256,6 +4356,8 @@ public final class Model {
       }
       /**
        * <code>string ip_address = 1;</code>
+       * @param value The ipAddress to set.
+       * @return This builder for chaining.
        */
       public Builder setIpAddress(
           java.lang.String value) {
@@ -4269,6 +4371,7 @@ public final class Model {
       }
       /**
        * <code>string ip_address = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIpAddress() {
         
@@ -4278,6 +4381,8 @@ public final class Model {
       }
       /**
        * <code>string ip_address = 1;</code>
+       * @param value The bytes for ipAddress to set.
+       * @return This builder for chaining.
        */
       public Builder setIpAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -4296,12 +4401,14 @@ public final class Model {
           org.opennms.integration.api.v1.proto.Model.SNMPInterface, org.opennms.integration.api.v1.proto.Model.SNMPInterface.Builder, org.opennms.integration.api.v1.proto.Model.SNMPInterfaceOrBuilder> snmpInterfaceBuilder_;
       /**
        * <code>.oia.SNMPInterface snmp_interface = 2;</code>
+       * @return Whether the snmpInterface field is set.
        */
       public boolean hasSnmpInterface() {
         return snmpInterfaceBuilder_ != null || snmpInterface_ != null;
       }
       /**
        * <code>.oia.SNMPInterface snmp_interface = 2;</code>
+       * @return The snmpInterface.
        */
       public org.opennms.integration.api.v1.proto.Model.SNMPInterface getSnmpInterface() {
         if (snmpInterfaceBuilder_ == null) {
@@ -4706,26 +4813,31 @@ public final class Model {
 
     /**
      * <code>string if_descr = 1;</code>
+     * @return The ifDescr.
      */
     java.lang.String getIfDescr();
     /**
      * <code>string if_descr = 1;</code>
+     * @return The bytes for ifDescr.
      */
     com.google.protobuf.ByteString
         getIfDescrBytes();
 
     /**
      * <code>string if_name = 2;</code>
+     * @return The ifName.
      */
     java.lang.String getIfName();
     /**
      * <code>string if_name = 2;</code>
+     * @return The bytes for ifName.
      */
     com.google.protobuf.ByteString
         getIfNameBytes();
 
     /**
      * <code>uint64 if_index = 3;</code>
+     * @return The ifIndex.
      */
     long getIfIndex();
   }
@@ -4829,6 +4941,7 @@ public final class Model {
     private volatile java.lang.Object ifDescr_;
     /**
      * <code>string if_descr = 1;</code>
+     * @return The ifDescr.
      */
     public java.lang.String getIfDescr() {
       java.lang.Object ref = ifDescr_;
@@ -4844,6 +4957,7 @@ public final class Model {
     }
     /**
      * <code>string if_descr = 1;</code>
+     * @return The bytes for ifDescr.
      */
     public com.google.protobuf.ByteString
         getIfDescrBytes() {
@@ -4863,6 +4977,7 @@ public final class Model {
     private volatile java.lang.Object ifName_;
     /**
      * <code>string if_name = 2;</code>
+     * @return The ifName.
      */
     public java.lang.String getIfName() {
       java.lang.Object ref = ifName_;
@@ -4878,6 +4993,7 @@ public final class Model {
     }
     /**
      * <code>string if_name = 2;</code>
+     * @return The bytes for ifName.
      */
     public com.google.protobuf.ByteString
         getIfNameBytes() {
@@ -4897,6 +5013,7 @@ public final class Model {
     private long ifIndex_;
     /**
      * <code>uint64 if_index = 3;</code>
+     * @return The ifIndex.
      */
     public long getIfIndex() {
       return ifIndex_;
@@ -5242,6 +5359,7 @@ public final class Model {
       private java.lang.Object ifDescr_ = "";
       /**
        * <code>string if_descr = 1;</code>
+       * @return The ifDescr.
        */
       public java.lang.String getIfDescr() {
         java.lang.Object ref = ifDescr_;
@@ -5257,6 +5375,7 @@ public final class Model {
       }
       /**
        * <code>string if_descr = 1;</code>
+       * @return The bytes for ifDescr.
        */
       public com.google.protobuf.ByteString
           getIfDescrBytes() {
@@ -5273,6 +5392,8 @@ public final class Model {
       }
       /**
        * <code>string if_descr = 1;</code>
+       * @param value The ifDescr to set.
+       * @return This builder for chaining.
        */
       public Builder setIfDescr(
           java.lang.String value) {
@@ -5286,6 +5407,7 @@ public final class Model {
       }
       /**
        * <code>string if_descr = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIfDescr() {
         
@@ -5295,6 +5417,8 @@ public final class Model {
       }
       /**
        * <code>string if_descr = 1;</code>
+       * @param value The bytes for ifDescr to set.
+       * @return This builder for chaining.
        */
       public Builder setIfDescrBytes(
           com.google.protobuf.ByteString value) {
@@ -5311,6 +5435,7 @@ public final class Model {
       private java.lang.Object ifName_ = "";
       /**
        * <code>string if_name = 2;</code>
+       * @return The ifName.
        */
       public java.lang.String getIfName() {
         java.lang.Object ref = ifName_;
@@ -5326,6 +5451,7 @@ public final class Model {
       }
       /**
        * <code>string if_name = 2;</code>
+       * @return The bytes for ifName.
        */
       public com.google.protobuf.ByteString
           getIfNameBytes() {
@@ -5342,6 +5468,8 @@ public final class Model {
       }
       /**
        * <code>string if_name = 2;</code>
+       * @param value The ifName to set.
+       * @return This builder for chaining.
        */
       public Builder setIfName(
           java.lang.String value) {
@@ -5355,6 +5483,7 @@ public final class Model {
       }
       /**
        * <code>string if_name = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIfName() {
         
@@ -5364,6 +5493,8 @@ public final class Model {
       }
       /**
        * <code>string if_name = 2;</code>
+       * @param value The bytes for ifName to set.
+       * @return This builder for chaining.
        */
       public Builder setIfNameBytes(
           com.google.protobuf.ByteString value) {
@@ -5380,12 +5511,15 @@ public final class Model {
       private long ifIndex_ ;
       /**
        * <code>uint64 if_index = 3;</code>
+       * @return The ifIndex.
        */
       public long getIfIndex() {
         return ifIndex_;
       }
       /**
        * <code>uint64 if_index = 3;</code>
+       * @param value The ifIndex to set.
+       * @return This builder for chaining.
        */
       public Builder setIfIndex(long value) {
         
@@ -5395,6 +5529,7 @@ public final class Model {
       }
       /**
        * <code>uint64 if_index = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIfIndex() {
         
@@ -5461,30 +5596,36 @@ public final class Model {
 
     /**
      * <code>string context = 1;</code>
+     * @return The context.
      */
     java.lang.String getContext();
     /**
      * <code>string context = 1;</code>
+     * @return The bytes for context.
      */
     com.google.protobuf.ByteString
         getContextBytes();
 
     /**
      * <code>string key = 2;</code>
+     * @return The key.
      */
     java.lang.String getKey();
     /**
      * <code>string key = 2;</code>
+     * @return The bytes for key.
      */
     com.google.protobuf.ByteString
         getKeyBytes();
 
     /**
      * <code>string value = 3;</code>
+     * @return The value.
      */
     java.lang.String getValue();
     /**
      * <code>string value = 3;</code>
+     * @return The bytes for value.
      */
     com.google.protobuf.ByteString
         getValueBytes();
@@ -5591,6 +5732,7 @@ public final class Model {
     private volatile java.lang.Object context_;
     /**
      * <code>string context = 1;</code>
+     * @return The context.
      */
     public java.lang.String getContext() {
       java.lang.Object ref = context_;
@@ -5606,6 +5748,7 @@ public final class Model {
     }
     /**
      * <code>string context = 1;</code>
+     * @return The bytes for context.
      */
     public com.google.protobuf.ByteString
         getContextBytes() {
@@ -5625,6 +5768,7 @@ public final class Model {
     private volatile java.lang.Object key_;
     /**
      * <code>string key = 2;</code>
+     * @return The key.
      */
     public java.lang.String getKey() {
       java.lang.Object ref = key_;
@@ -5640,6 +5784,7 @@ public final class Model {
     }
     /**
      * <code>string key = 2;</code>
+     * @return The bytes for key.
      */
     public com.google.protobuf.ByteString
         getKeyBytes() {
@@ -5659,6 +5804,7 @@ public final class Model {
     private volatile java.lang.Object value_;
     /**
      * <code>string value = 3;</code>
+     * @return The value.
      */
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
@@ -5674,6 +5820,7 @@ public final class Model {
     }
     /**
      * <code>string value = 3;</code>
+     * @return The bytes for value.
      */
     public com.google.protobuf.ByteString
         getValueBytes() {
@@ -6028,6 +6175,7 @@ public final class Model {
       private java.lang.Object context_ = "";
       /**
        * <code>string context = 1;</code>
+       * @return The context.
        */
       public java.lang.String getContext() {
         java.lang.Object ref = context_;
@@ -6043,6 +6191,7 @@ public final class Model {
       }
       /**
        * <code>string context = 1;</code>
+       * @return The bytes for context.
        */
       public com.google.protobuf.ByteString
           getContextBytes() {
@@ -6059,6 +6208,8 @@ public final class Model {
       }
       /**
        * <code>string context = 1;</code>
+       * @param value The context to set.
+       * @return This builder for chaining.
        */
       public Builder setContext(
           java.lang.String value) {
@@ -6072,6 +6223,7 @@ public final class Model {
       }
       /**
        * <code>string context = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearContext() {
         
@@ -6081,6 +6233,8 @@ public final class Model {
       }
       /**
        * <code>string context = 1;</code>
+       * @param value The bytes for context to set.
+       * @return This builder for chaining.
        */
       public Builder setContextBytes(
           com.google.protobuf.ByteString value) {
@@ -6097,6 +6251,7 @@ public final class Model {
       private java.lang.Object key_ = "";
       /**
        * <code>string key = 2;</code>
+       * @return The key.
        */
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
@@ -6112,6 +6267,7 @@ public final class Model {
       }
       /**
        * <code>string key = 2;</code>
+       * @return The bytes for key.
        */
       public com.google.protobuf.ByteString
           getKeyBytes() {
@@ -6128,6 +6284,8 @@ public final class Model {
       }
       /**
        * <code>string key = 2;</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
        */
       public Builder setKey(
           java.lang.String value) {
@@ -6141,6 +6299,7 @@ public final class Model {
       }
       /**
        * <code>string key = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearKey() {
         
@@ -6150,6 +6309,8 @@ public final class Model {
       }
       /**
        * <code>string key = 2;</code>
+       * @param value The bytes for key to set.
+       * @return This builder for chaining.
        */
       public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
@@ -6166,6 +6327,7 @@ public final class Model {
       private java.lang.Object value_ = "";
       /**
        * <code>string value = 3;</code>
+       * @return The value.
        */
       public java.lang.String getValue() {
         java.lang.Object ref = value_;
@@ -6181,6 +6343,7 @@ public final class Model {
       }
       /**
        * <code>string value = 3;</code>
+       * @return The bytes for value.
        */
       public com.google.protobuf.ByteString
           getValueBytes() {
@@ -6197,6 +6360,8 @@ public final class Model {
       }
       /**
        * <code>string value = 3;</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
        */
       public Builder setValue(
           java.lang.String value) {
@@ -6210,6 +6375,7 @@ public final class Model {
       }
       /**
        * <code>string value = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearValue() {
         
@@ -6219,6 +6385,8 @@ public final class Model {
       }
       /**
        * <code>string value = 3;</code>
+       * @param value The bytes for value to set.
+       * @return This builder for chaining.
        */
       public Builder setValueBytes(
           com.google.protobuf.ByteString value) {
@@ -6290,71 +6458,85 @@ public final class Model {
 
     /**
      * <code>string address1 = 1;</code>
+     * @return The address1.
      */
     java.lang.String getAddress1();
     /**
      * <code>string address1 = 1;</code>
+     * @return The bytes for address1.
      */
     com.google.protobuf.ByteString
         getAddress1Bytes();
 
     /**
      * <code>string address2 = 2;</code>
+     * @return The address2.
      */
     java.lang.String getAddress2();
     /**
      * <code>string address2 = 2;</code>
+     * @return The bytes for address2.
      */
     com.google.protobuf.ByteString
         getAddress2Bytes();
 
     /**
      * <code>string city = 3;</code>
+     * @return The city.
      */
     java.lang.String getCity();
     /**
      * <code>string city = 3;</code>
+     * @return The bytes for city.
      */
     com.google.protobuf.ByteString
         getCityBytes();
 
     /**
      * <code>string state = 4;</code>
+     * @return The state.
      */
     java.lang.String getState();
     /**
      * <code>string state = 4;</code>
+     * @return The bytes for state.
      */
     com.google.protobuf.ByteString
         getStateBytes();
 
     /**
      * <code>string zip = 5;</code>
+     * @return The zip.
      */
     java.lang.String getZip();
     /**
      * <code>string zip = 5;</code>
+     * @return The bytes for zip.
      */
     com.google.protobuf.ByteString
         getZipBytes();
 
     /**
      * <code>string country = 6;</code>
+     * @return The country.
      */
     java.lang.String getCountry();
     /**
      * <code>string country = 6;</code>
+     * @return The bytes for country.
      */
     com.google.protobuf.ByteString
         getCountryBytes();
 
     /**
      * <code>double longitude = 7;</code>
+     * @return The longitude.
      */
     double getLongitude();
 
     /**
      * <code>double latitude = 8;</code>
+     * @return The latitude.
      */
     double getLatitude();
   }
@@ -6491,6 +6673,7 @@ public final class Model {
     private volatile java.lang.Object address1_;
     /**
      * <code>string address1 = 1;</code>
+     * @return The address1.
      */
     public java.lang.String getAddress1() {
       java.lang.Object ref = address1_;
@@ -6506,6 +6689,7 @@ public final class Model {
     }
     /**
      * <code>string address1 = 1;</code>
+     * @return The bytes for address1.
      */
     public com.google.protobuf.ByteString
         getAddress1Bytes() {
@@ -6525,6 +6709,7 @@ public final class Model {
     private volatile java.lang.Object address2_;
     /**
      * <code>string address2 = 2;</code>
+     * @return The address2.
      */
     public java.lang.String getAddress2() {
       java.lang.Object ref = address2_;
@@ -6540,6 +6725,7 @@ public final class Model {
     }
     /**
      * <code>string address2 = 2;</code>
+     * @return The bytes for address2.
      */
     public com.google.protobuf.ByteString
         getAddress2Bytes() {
@@ -6559,6 +6745,7 @@ public final class Model {
     private volatile java.lang.Object city_;
     /**
      * <code>string city = 3;</code>
+     * @return The city.
      */
     public java.lang.String getCity() {
       java.lang.Object ref = city_;
@@ -6574,6 +6761,7 @@ public final class Model {
     }
     /**
      * <code>string city = 3;</code>
+     * @return The bytes for city.
      */
     public com.google.protobuf.ByteString
         getCityBytes() {
@@ -6593,6 +6781,7 @@ public final class Model {
     private volatile java.lang.Object state_;
     /**
      * <code>string state = 4;</code>
+     * @return The state.
      */
     public java.lang.String getState() {
       java.lang.Object ref = state_;
@@ -6608,6 +6797,7 @@ public final class Model {
     }
     /**
      * <code>string state = 4;</code>
+     * @return The bytes for state.
      */
     public com.google.protobuf.ByteString
         getStateBytes() {
@@ -6627,6 +6817,7 @@ public final class Model {
     private volatile java.lang.Object zip_;
     /**
      * <code>string zip = 5;</code>
+     * @return The zip.
      */
     public java.lang.String getZip() {
       java.lang.Object ref = zip_;
@@ -6642,6 +6833,7 @@ public final class Model {
     }
     /**
      * <code>string zip = 5;</code>
+     * @return The bytes for zip.
      */
     public com.google.protobuf.ByteString
         getZipBytes() {
@@ -6661,6 +6853,7 @@ public final class Model {
     private volatile java.lang.Object country_;
     /**
      * <code>string country = 6;</code>
+     * @return The country.
      */
     public java.lang.String getCountry() {
       java.lang.Object ref = country_;
@@ -6676,6 +6869,7 @@ public final class Model {
     }
     /**
      * <code>string country = 6;</code>
+     * @return The bytes for country.
      */
     public com.google.protobuf.ByteString
         getCountryBytes() {
@@ -6695,6 +6889,7 @@ public final class Model {
     private double longitude_;
     /**
      * <code>double longitude = 7;</code>
+     * @return The longitude.
      */
     public double getLongitude() {
       return longitude_;
@@ -6704,6 +6899,7 @@ public final class Model {
     private double latitude_;
     /**
      * <code>double latitude = 8;</code>
+     * @return The latitude.
      */
     public double getLatitude() {
       return latitude_;
@@ -7137,6 +7333,7 @@ public final class Model {
       private java.lang.Object address1_ = "";
       /**
        * <code>string address1 = 1;</code>
+       * @return The address1.
        */
       public java.lang.String getAddress1() {
         java.lang.Object ref = address1_;
@@ -7152,6 +7349,7 @@ public final class Model {
       }
       /**
        * <code>string address1 = 1;</code>
+       * @return The bytes for address1.
        */
       public com.google.protobuf.ByteString
           getAddress1Bytes() {
@@ -7168,6 +7366,8 @@ public final class Model {
       }
       /**
        * <code>string address1 = 1;</code>
+       * @param value The address1 to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress1(
           java.lang.String value) {
@@ -7181,6 +7381,7 @@ public final class Model {
       }
       /**
        * <code>string address1 = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress1() {
         
@@ -7190,6 +7391,8 @@ public final class Model {
       }
       /**
        * <code>string address1 = 1;</code>
+       * @param value The bytes for address1 to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress1Bytes(
           com.google.protobuf.ByteString value) {
@@ -7206,6 +7409,7 @@ public final class Model {
       private java.lang.Object address2_ = "";
       /**
        * <code>string address2 = 2;</code>
+       * @return The address2.
        */
       public java.lang.String getAddress2() {
         java.lang.Object ref = address2_;
@@ -7221,6 +7425,7 @@ public final class Model {
       }
       /**
        * <code>string address2 = 2;</code>
+       * @return The bytes for address2.
        */
       public com.google.protobuf.ByteString
           getAddress2Bytes() {
@@ -7237,6 +7442,8 @@ public final class Model {
       }
       /**
        * <code>string address2 = 2;</code>
+       * @param value The address2 to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress2(
           java.lang.String value) {
@@ -7250,6 +7457,7 @@ public final class Model {
       }
       /**
        * <code>string address2 = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress2() {
         
@@ -7259,6 +7467,8 @@ public final class Model {
       }
       /**
        * <code>string address2 = 2;</code>
+       * @param value The bytes for address2 to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress2Bytes(
           com.google.protobuf.ByteString value) {
@@ -7275,6 +7485,7 @@ public final class Model {
       private java.lang.Object city_ = "";
       /**
        * <code>string city = 3;</code>
+       * @return The city.
        */
       public java.lang.String getCity() {
         java.lang.Object ref = city_;
@@ -7290,6 +7501,7 @@ public final class Model {
       }
       /**
        * <code>string city = 3;</code>
+       * @return The bytes for city.
        */
       public com.google.protobuf.ByteString
           getCityBytes() {
@@ -7306,6 +7518,8 @@ public final class Model {
       }
       /**
        * <code>string city = 3;</code>
+       * @param value The city to set.
+       * @return This builder for chaining.
        */
       public Builder setCity(
           java.lang.String value) {
@@ -7319,6 +7533,7 @@ public final class Model {
       }
       /**
        * <code>string city = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCity() {
         
@@ -7328,6 +7543,8 @@ public final class Model {
       }
       /**
        * <code>string city = 3;</code>
+       * @param value The bytes for city to set.
+       * @return This builder for chaining.
        */
       public Builder setCityBytes(
           com.google.protobuf.ByteString value) {
@@ -7344,6 +7561,7 @@ public final class Model {
       private java.lang.Object state_ = "";
       /**
        * <code>string state = 4;</code>
+       * @return The state.
        */
       public java.lang.String getState() {
         java.lang.Object ref = state_;
@@ -7359,6 +7577,7 @@ public final class Model {
       }
       /**
        * <code>string state = 4;</code>
+       * @return The bytes for state.
        */
       public com.google.protobuf.ByteString
           getStateBytes() {
@@ -7375,6 +7594,8 @@ public final class Model {
       }
       /**
        * <code>string state = 4;</code>
+       * @param value The state to set.
+       * @return This builder for chaining.
        */
       public Builder setState(
           java.lang.String value) {
@@ -7388,6 +7609,7 @@ public final class Model {
       }
       /**
        * <code>string state = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearState() {
         
@@ -7397,6 +7619,8 @@ public final class Model {
       }
       /**
        * <code>string state = 4;</code>
+       * @param value The bytes for state to set.
+       * @return This builder for chaining.
        */
       public Builder setStateBytes(
           com.google.protobuf.ByteString value) {
@@ -7413,6 +7637,7 @@ public final class Model {
       private java.lang.Object zip_ = "";
       /**
        * <code>string zip = 5;</code>
+       * @return The zip.
        */
       public java.lang.String getZip() {
         java.lang.Object ref = zip_;
@@ -7428,6 +7653,7 @@ public final class Model {
       }
       /**
        * <code>string zip = 5;</code>
+       * @return The bytes for zip.
        */
       public com.google.protobuf.ByteString
           getZipBytes() {
@@ -7444,6 +7670,8 @@ public final class Model {
       }
       /**
        * <code>string zip = 5;</code>
+       * @param value The zip to set.
+       * @return This builder for chaining.
        */
       public Builder setZip(
           java.lang.String value) {
@@ -7457,6 +7685,7 @@ public final class Model {
       }
       /**
        * <code>string zip = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearZip() {
         
@@ -7466,6 +7695,8 @@ public final class Model {
       }
       /**
        * <code>string zip = 5;</code>
+       * @param value The bytes for zip to set.
+       * @return This builder for chaining.
        */
       public Builder setZipBytes(
           com.google.protobuf.ByteString value) {
@@ -7482,6 +7713,7 @@ public final class Model {
       private java.lang.Object country_ = "";
       /**
        * <code>string country = 6;</code>
+       * @return The country.
        */
       public java.lang.String getCountry() {
         java.lang.Object ref = country_;
@@ -7497,6 +7729,7 @@ public final class Model {
       }
       /**
        * <code>string country = 6;</code>
+       * @return The bytes for country.
        */
       public com.google.protobuf.ByteString
           getCountryBytes() {
@@ -7513,6 +7746,8 @@ public final class Model {
       }
       /**
        * <code>string country = 6;</code>
+       * @param value The country to set.
+       * @return This builder for chaining.
        */
       public Builder setCountry(
           java.lang.String value) {
@@ -7526,6 +7761,7 @@ public final class Model {
       }
       /**
        * <code>string country = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCountry() {
         
@@ -7535,6 +7771,8 @@ public final class Model {
       }
       /**
        * <code>string country = 6;</code>
+       * @param value The bytes for country to set.
+       * @return This builder for chaining.
        */
       public Builder setCountryBytes(
           com.google.protobuf.ByteString value) {
@@ -7551,12 +7789,15 @@ public final class Model {
       private double longitude_ ;
       /**
        * <code>double longitude = 7;</code>
+       * @return The longitude.
        */
       public double getLongitude() {
         return longitude_;
       }
       /**
        * <code>double longitude = 7;</code>
+       * @param value The longitude to set.
+       * @return This builder for chaining.
        */
       public Builder setLongitude(double value) {
         
@@ -7566,6 +7807,7 @@ public final class Model {
       }
       /**
        * <code>double longitude = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLongitude() {
         
@@ -7577,12 +7819,15 @@ public final class Model {
       private double latitude_ ;
       /**
        * <code>double latitude = 8;</code>
+       * @return The latitude.
        */
       public double getLatitude() {
         return latitude_;
       }
       /**
        * <code>double latitude = 8;</code>
+       * @param value The latitude to set.
+       * @return This builder for chaining.
        */
       public Builder setLatitude(double value) {
         
@@ -7592,6 +7837,7 @@ public final class Model {
       }
       /**
        * <code>double latitude = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLatitude() {
         
@@ -7658,110 +7904,132 @@ public final class Model {
 
     /**
      * <code>string vendor = 1;</code>
+     * @return The vendor.
      */
     java.lang.String getVendor();
     /**
      * <code>string vendor = 1;</code>
+     * @return The bytes for vendor.
      */
     com.google.protobuf.ByteString
         getVendorBytes();
 
     /**
      * <code>string model_number = 2;</code>
+     * @return The modelNumber.
      */
     java.lang.String getModelNumber();
     /**
      * <code>string model_number = 2;</code>
+     * @return The bytes for modelNumber.
      */
     com.google.protobuf.ByteString
         getModelNumberBytes();
 
     /**
      * <code>string description = 3;</code>
+     * @return The description.
      */
     java.lang.String getDescription();
     /**
      * <code>string description = 3;</code>
+     * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
 
     /**
      * <code>string asset_number = 4;</code>
+     * @return The assetNumber.
      */
     java.lang.String getAssetNumber();
     /**
      * <code>string asset_number = 4;</code>
+     * @return The bytes for assetNumber.
      */
     com.google.protobuf.ByteString
         getAssetNumberBytes();
 
     /**
      * <code>string operating_system = 5;</code>
+     * @return The operatingSystem.
      */
     java.lang.String getOperatingSystem();
     /**
      * <code>string operating_system = 5;</code>
+     * @return The bytes for operatingSystem.
      */
     com.google.protobuf.ByteString
         getOperatingSystemBytes();
 
     /**
      * <code>string region = 6;</code>
+     * @return The region.
      */
     java.lang.String getRegion();
     /**
      * <code>string region = 6;</code>
+     * @return The bytes for region.
      */
     com.google.protobuf.ByteString
         getRegionBytes();
 
     /**
      * <code>string division = 7;</code>
+     * @return The division.
      */
     java.lang.String getDivision();
     /**
      * <code>string division = 7;</code>
+     * @return The bytes for division.
      */
     com.google.protobuf.ByteString
         getDivisionBytes();
 
     /**
      * <code>string department = 8;</code>
+     * @return The department.
      */
     java.lang.String getDepartment();
     /**
      * <code>string department = 8;</code>
+     * @return The bytes for department.
      */
     com.google.protobuf.ByteString
         getDepartmentBytes();
 
     /**
      * <code>string building = 9;</code>
+     * @return The building.
      */
     java.lang.String getBuilding();
     /**
      * <code>string building = 9;</code>
+     * @return The bytes for building.
      */
     com.google.protobuf.ByteString
         getBuildingBytes();
 
     /**
      * <code>string floor = 10;</code>
+     * @return The floor.
      */
     java.lang.String getFloor();
     /**
      * <code>string floor = 10;</code>
+     * @return The bytes for floor.
      */
     com.google.protobuf.ByteString
         getFloorBytes();
 
     /**
      * <code>.oia.Geolocation geolocation = 11;</code>
+     * @return Whether the geolocation field is set.
      */
     boolean hasGeolocation();
     /**
      * <code>.oia.Geolocation geolocation = 11;</code>
+     * @return The geolocation.
      */
     org.opennms.integration.api.v1.proto.Model.Geolocation getGeolocation();
     /**
@@ -7933,6 +8201,7 @@ public final class Model {
     private volatile java.lang.Object vendor_;
     /**
      * <code>string vendor = 1;</code>
+     * @return The vendor.
      */
     public java.lang.String getVendor() {
       java.lang.Object ref = vendor_;
@@ -7948,6 +8217,7 @@ public final class Model {
     }
     /**
      * <code>string vendor = 1;</code>
+     * @return The bytes for vendor.
      */
     public com.google.protobuf.ByteString
         getVendorBytes() {
@@ -7967,6 +8237,7 @@ public final class Model {
     private volatile java.lang.Object modelNumber_;
     /**
      * <code>string model_number = 2;</code>
+     * @return The modelNumber.
      */
     public java.lang.String getModelNumber() {
       java.lang.Object ref = modelNumber_;
@@ -7982,6 +8253,7 @@ public final class Model {
     }
     /**
      * <code>string model_number = 2;</code>
+     * @return The bytes for modelNumber.
      */
     public com.google.protobuf.ByteString
         getModelNumberBytes() {
@@ -8001,6 +8273,7 @@ public final class Model {
     private volatile java.lang.Object description_;
     /**
      * <code>string description = 3;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -8016,6 +8289,7 @@ public final class Model {
     }
     /**
      * <code>string description = 3;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -8035,6 +8309,7 @@ public final class Model {
     private volatile java.lang.Object assetNumber_;
     /**
      * <code>string asset_number = 4;</code>
+     * @return The assetNumber.
      */
     public java.lang.String getAssetNumber() {
       java.lang.Object ref = assetNumber_;
@@ -8050,6 +8325,7 @@ public final class Model {
     }
     /**
      * <code>string asset_number = 4;</code>
+     * @return The bytes for assetNumber.
      */
     public com.google.protobuf.ByteString
         getAssetNumberBytes() {
@@ -8069,6 +8345,7 @@ public final class Model {
     private volatile java.lang.Object operatingSystem_;
     /**
      * <code>string operating_system = 5;</code>
+     * @return The operatingSystem.
      */
     public java.lang.String getOperatingSystem() {
       java.lang.Object ref = operatingSystem_;
@@ -8084,6 +8361,7 @@ public final class Model {
     }
     /**
      * <code>string operating_system = 5;</code>
+     * @return The bytes for operatingSystem.
      */
     public com.google.protobuf.ByteString
         getOperatingSystemBytes() {
@@ -8103,6 +8381,7 @@ public final class Model {
     private volatile java.lang.Object region_;
     /**
      * <code>string region = 6;</code>
+     * @return The region.
      */
     public java.lang.String getRegion() {
       java.lang.Object ref = region_;
@@ -8118,6 +8397,7 @@ public final class Model {
     }
     /**
      * <code>string region = 6;</code>
+     * @return The bytes for region.
      */
     public com.google.protobuf.ByteString
         getRegionBytes() {
@@ -8137,6 +8417,7 @@ public final class Model {
     private volatile java.lang.Object division_;
     /**
      * <code>string division = 7;</code>
+     * @return The division.
      */
     public java.lang.String getDivision() {
       java.lang.Object ref = division_;
@@ -8152,6 +8433,7 @@ public final class Model {
     }
     /**
      * <code>string division = 7;</code>
+     * @return The bytes for division.
      */
     public com.google.protobuf.ByteString
         getDivisionBytes() {
@@ -8171,6 +8453,7 @@ public final class Model {
     private volatile java.lang.Object department_;
     /**
      * <code>string department = 8;</code>
+     * @return The department.
      */
     public java.lang.String getDepartment() {
       java.lang.Object ref = department_;
@@ -8186,6 +8469,7 @@ public final class Model {
     }
     /**
      * <code>string department = 8;</code>
+     * @return The bytes for department.
      */
     public com.google.protobuf.ByteString
         getDepartmentBytes() {
@@ -8205,6 +8489,7 @@ public final class Model {
     private volatile java.lang.Object building_;
     /**
      * <code>string building = 9;</code>
+     * @return The building.
      */
     public java.lang.String getBuilding() {
       java.lang.Object ref = building_;
@@ -8220,6 +8505,7 @@ public final class Model {
     }
     /**
      * <code>string building = 9;</code>
+     * @return The bytes for building.
      */
     public com.google.protobuf.ByteString
         getBuildingBytes() {
@@ -8239,6 +8525,7 @@ public final class Model {
     private volatile java.lang.Object floor_;
     /**
      * <code>string floor = 10;</code>
+     * @return The floor.
      */
     public java.lang.String getFloor() {
       java.lang.Object ref = floor_;
@@ -8254,6 +8541,7 @@ public final class Model {
     }
     /**
      * <code>string floor = 10;</code>
+     * @return The bytes for floor.
      */
     public com.google.protobuf.ByteString
         getFloorBytes() {
@@ -8273,12 +8561,14 @@ public final class Model {
     private org.opennms.integration.api.v1.proto.Model.Geolocation geolocation_;
     /**
      * <code>.oia.Geolocation geolocation = 11;</code>
+     * @return Whether the geolocation field is set.
      */
     public boolean hasGeolocation() {
       return geolocation_ != null;
     }
     /**
      * <code>.oia.Geolocation geolocation = 11;</code>
+     * @return The geolocation.
      */
     public org.opennms.integration.api.v1.proto.Model.Geolocation getGeolocation() {
       return geolocation_ == null ? org.opennms.integration.api.v1.proto.Model.Geolocation.getDefaultInstance() : geolocation_;
@@ -8778,6 +9068,7 @@ public final class Model {
       private java.lang.Object vendor_ = "";
       /**
        * <code>string vendor = 1;</code>
+       * @return The vendor.
        */
       public java.lang.String getVendor() {
         java.lang.Object ref = vendor_;
@@ -8793,6 +9084,7 @@ public final class Model {
       }
       /**
        * <code>string vendor = 1;</code>
+       * @return The bytes for vendor.
        */
       public com.google.protobuf.ByteString
           getVendorBytes() {
@@ -8809,6 +9101,8 @@ public final class Model {
       }
       /**
        * <code>string vendor = 1;</code>
+       * @param value The vendor to set.
+       * @return This builder for chaining.
        */
       public Builder setVendor(
           java.lang.String value) {
@@ -8822,6 +9116,7 @@ public final class Model {
       }
       /**
        * <code>string vendor = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearVendor() {
         
@@ -8831,6 +9126,8 @@ public final class Model {
       }
       /**
        * <code>string vendor = 1;</code>
+       * @param value The bytes for vendor to set.
+       * @return This builder for chaining.
        */
       public Builder setVendorBytes(
           com.google.protobuf.ByteString value) {
@@ -8847,6 +9144,7 @@ public final class Model {
       private java.lang.Object modelNumber_ = "";
       /**
        * <code>string model_number = 2;</code>
+       * @return The modelNumber.
        */
       public java.lang.String getModelNumber() {
         java.lang.Object ref = modelNumber_;
@@ -8862,6 +9160,7 @@ public final class Model {
       }
       /**
        * <code>string model_number = 2;</code>
+       * @return The bytes for modelNumber.
        */
       public com.google.protobuf.ByteString
           getModelNumberBytes() {
@@ -8878,6 +9177,8 @@ public final class Model {
       }
       /**
        * <code>string model_number = 2;</code>
+       * @param value The modelNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setModelNumber(
           java.lang.String value) {
@@ -8891,6 +9192,7 @@ public final class Model {
       }
       /**
        * <code>string model_number = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearModelNumber() {
         
@@ -8900,6 +9202,8 @@ public final class Model {
       }
       /**
        * <code>string model_number = 2;</code>
+       * @param value The bytes for modelNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setModelNumberBytes(
           com.google.protobuf.ByteString value) {
@@ -8916,6 +9220,7 @@ public final class Model {
       private java.lang.Object description_ = "";
       /**
        * <code>string description = 3;</code>
+       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -8931,6 +9236,7 @@ public final class Model {
       }
       /**
        * <code>string description = 3;</code>
+       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -8947,6 +9253,8 @@ public final class Model {
       }
       /**
        * <code>string description = 3;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescription(
           java.lang.String value) {
@@ -8960,6 +9268,7 @@ public final class Model {
       }
       /**
        * <code>string description = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDescription() {
         
@@ -8969,6 +9278,8 @@ public final class Model {
       }
       /**
        * <code>string description = 3;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
@@ -8985,6 +9296,7 @@ public final class Model {
       private java.lang.Object assetNumber_ = "";
       /**
        * <code>string asset_number = 4;</code>
+       * @return The assetNumber.
        */
       public java.lang.String getAssetNumber() {
         java.lang.Object ref = assetNumber_;
@@ -9000,6 +9312,7 @@ public final class Model {
       }
       /**
        * <code>string asset_number = 4;</code>
+       * @return The bytes for assetNumber.
        */
       public com.google.protobuf.ByteString
           getAssetNumberBytes() {
@@ -9016,6 +9329,8 @@ public final class Model {
       }
       /**
        * <code>string asset_number = 4;</code>
+       * @param value The assetNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setAssetNumber(
           java.lang.String value) {
@@ -9029,6 +9344,7 @@ public final class Model {
       }
       /**
        * <code>string asset_number = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAssetNumber() {
         
@@ -9038,6 +9354,8 @@ public final class Model {
       }
       /**
        * <code>string asset_number = 4;</code>
+       * @param value The bytes for assetNumber to set.
+       * @return This builder for chaining.
        */
       public Builder setAssetNumberBytes(
           com.google.protobuf.ByteString value) {
@@ -9054,6 +9372,7 @@ public final class Model {
       private java.lang.Object operatingSystem_ = "";
       /**
        * <code>string operating_system = 5;</code>
+       * @return The operatingSystem.
        */
       public java.lang.String getOperatingSystem() {
         java.lang.Object ref = operatingSystem_;
@@ -9069,6 +9388,7 @@ public final class Model {
       }
       /**
        * <code>string operating_system = 5;</code>
+       * @return The bytes for operatingSystem.
        */
       public com.google.protobuf.ByteString
           getOperatingSystemBytes() {
@@ -9085,6 +9405,8 @@ public final class Model {
       }
       /**
        * <code>string operating_system = 5;</code>
+       * @param value The operatingSystem to set.
+       * @return This builder for chaining.
        */
       public Builder setOperatingSystem(
           java.lang.String value) {
@@ -9098,6 +9420,7 @@ public final class Model {
       }
       /**
        * <code>string operating_system = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearOperatingSystem() {
         
@@ -9107,6 +9430,8 @@ public final class Model {
       }
       /**
        * <code>string operating_system = 5;</code>
+       * @param value The bytes for operatingSystem to set.
+       * @return This builder for chaining.
        */
       public Builder setOperatingSystemBytes(
           com.google.protobuf.ByteString value) {
@@ -9123,6 +9448,7 @@ public final class Model {
       private java.lang.Object region_ = "";
       /**
        * <code>string region = 6;</code>
+       * @return The region.
        */
       public java.lang.String getRegion() {
         java.lang.Object ref = region_;
@@ -9138,6 +9464,7 @@ public final class Model {
       }
       /**
        * <code>string region = 6;</code>
+       * @return The bytes for region.
        */
       public com.google.protobuf.ByteString
           getRegionBytes() {
@@ -9154,6 +9481,8 @@ public final class Model {
       }
       /**
        * <code>string region = 6;</code>
+       * @param value The region to set.
+       * @return This builder for chaining.
        */
       public Builder setRegion(
           java.lang.String value) {
@@ -9167,6 +9496,7 @@ public final class Model {
       }
       /**
        * <code>string region = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearRegion() {
         
@@ -9176,6 +9506,8 @@ public final class Model {
       }
       /**
        * <code>string region = 6;</code>
+       * @param value The bytes for region to set.
+       * @return This builder for chaining.
        */
       public Builder setRegionBytes(
           com.google.protobuf.ByteString value) {
@@ -9192,6 +9524,7 @@ public final class Model {
       private java.lang.Object division_ = "";
       /**
        * <code>string division = 7;</code>
+       * @return The division.
        */
       public java.lang.String getDivision() {
         java.lang.Object ref = division_;
@@ -9207,6 +9540,7 @@ public final class Model {
       }
       /**
        * <code>string division = 7;</code>
+       * @return The bytes for division.
        */
       public com.google.protobuf.ByteString
           getDivisionBytes() {
@@ -9223,6 +9557,8 @@ public final class Model {
       }
       /**
        * <code>string division = 7;</code>
+       * @param value The division to set.
+       * @return This builder for chaining.
        */
       public Builder setDivision(
           java.lang.String value) {
@@ -9236,6 +9572,7 @@ public final class Model {
       }
       /**
        * <code>string division = 7;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDivision() {
         
@@ -9245,6 +9582,8 @@ public final class Model {
       }
       /**
        * <code>string division = 7;</code>
+       * @param value The bytes for division to set.
+       * @return This builder for chaining.
        */
       public Builder setDivisionBytes(
           com.google.protobuf.ByteString value) {
@@ -9261,6 +9600,7 @@ public final class Model {
       private java.lang.Object department_ = "";
       /**
        * <code>string department = 8;</code>
+       * @return The department.
        */
       public java.lang.String getDepartment() {
         java.lang.Object ref = department_;
@@ -9276,6 +9616,7 @@ public final class Model {
       }
       /**
        * <code>string department = 8;</code>
+       * @return The bytes for department.
        */
       public com.google.protobuf.ByteString
           getDepartmentBytes() {
@@ -9292,6 +9633,8 @@ public final class Model {
       }
       /**
        * <code>string department = 8;</code>
+       * @param value The department to set.
+       * @return This builder for chaining.
        */
       public Builder setDepartment(
           java.lang.String value) {
@@ -9305,6 +9648,7 @@ public final class Model {
       }
       /**
        * <code>string department = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDepartment() {
         
@@ -9314,6 +9658,8 @@ public final class Model {
       }
       /**
        * <code>string department = 8;</code>
+       * @param value The bytes for department to set.
+       * @return This builder for chaining.
        */
       public Builder setDepartmentBytes(
           com.google.protobuf.ByteString value) {
@@ -9330,6 +9676,7 @@ public final class Model {
       private java.lang.Object building_ = "";
       /**
        * <code>string building = 9;</code>
+       * @return The building.
        */
       public java.lang.String getBuilding() {
         java.lang.Object ref = building_;
@@ -9345,6 +9692,7 @@ public final class Model {
       }
       /**
        * <code>string building = 9;</code>
+       * @return The bytes for building.
        */
       public com.google.protobuf.ByteString
           getBuildingBytes() {
@@ -9361,6 +9709,8 @@ public final class Model {
       }
       /**
        * <code>string building = 9;</code>
+       * @param value The building to set.
+       * @return This builder for chaining.
        */
       public Builder setBuilding(
           java.lang.String value) {
@@ -9374,6 +9724,7 @@ public final class Model {
       }
       /**
        * <code>string building = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearBuilding() {
         
@@ -9383,6 +9734,8 @@ public final class Model {
       }
       /**
        * <code>string building = 9;</code>
+       * @param value The bytes for building to set.
+       * @return This builder for chaining.
        */
       public Builder setBuildingBytes(
           com.google.protobuf.ByteString value) {
@@ -9399,6 +9752,7 @@ public final class Model {
       private java.lang.Object floor_ = "";
       /**
        * <code>string floor = 10;</code>
+       * @return The floor.
        */
       public java.lang.String getFloor() {
         java.lang.Object ref = floor_;
@@ -9414,6 +9768,7 @@ public final class Model {
       }
       /**
        * <code>string floor = 10;</code>
+       * @return The bytes for floor.
        */
       public com.google.protobuf.ByteString
           getFloorBytes() {
@@ -9430,6 +9785,8 @@ public final class Model {
       }
       /**
        * <code>string floor = 10;</code>
+       * @param value The floor to set.
+       * @return This builder for chaining.
        */
       public Builder setFloor(
           java.lang.String value) {
@@ -9443,6 +9800,7 @@ public final class Model {
       }
       /**
        * <code>string floor = 10;</code>
+       * @return This builder for chaining.
        */
       public Builder clearFloor() {
         
@@ -9452,6 +9810,8 @@ public final class Model {
       }
       /**
        * <code>string floor = 10;</code>
+       * @param value The bytes for floor to set.
+       * @return This builder for chaining.
        */
       public Builder setFloorBytes(
           com.google.protobuf.ByteString value) {
@@ -9470,12 +9830,14 @@ public final class Model {
           org.opennms.integration.api.v1.proto.Model.Geolocation, org.opennms.integration.api.v1.proto.Model.Geolocation.Builder, org.opennms.integration.api.v1.proto.Model.GeolocationOrBuilder> geolocationBuilder_;
       /**
        * <code>.oia.Geolocation geolocation = 11;</code>
+       * @return Whether the geolocation field is set.
        */
       public boolean hasGeolocation() {
         return geolocationBuilder_ != null || geolocation_ != null;
       }
       /**
        * <code>.oia.Geolocation geolocation = 11;</code>
+       * @return The geolocation.
        */
       public org.opennms.integration.api.v1.proto.Model.Geolocation getGeolocation() {
         if (geolocationBuilder_ == null) {
@@ -9640,55 +10002,66 @@ public final class Model {
 
     /**
      * <code>uint64 id = 1;</code>
+     * @return The id.
      */
     long getId();
 
     /**
      * <code>string foreign_source = 2;</code>
+     * @return The foreignSource.
      */
     java.lang.String getForeignSource();
     /**
      * <code>string foreign_source = 2;</code>
+     * @return The bytes for foreignSource.
      */
     com.google.protobuf.ByteString
         getForeignSourceBytes();
 
     /**
      * <code>string foreign_id = 3;</code>
+     * @return The foreignId.
      */
     java.lang.String getForeignId();
     /**
      * <code>string foreign_id = 3;</code>
+     * @return The bytes for foreignId.
      */
     com.google.protobuf.ByteString
         getForeignIdBytes();
 
     /**
      * <code>string label = 4;</code>
+     * @return The label.
      */
     java.lang.String getLabel();
     /**
      * <code>string label = 4;</code>
+     * @return The bytes for label.
      */
     com.google.protobuf.ByteString
         getLabelBytes();
 
     /**
      * <code>string location = 5;</code>
+     * @return The location.
      */
     java.lang.String getLocation();
     /**
      * <code>string location = 5;</code>
+     * @return The bytes for location.
      */
     com.google.protobuf.ByteString
         getLocationBytes();
 
     /**
      * <code>.oia.NodeAssetRecord asset_record = 6;</code>
+     * @return Whether the assetRecord field is set.
      */
     boolean hasAssetRecord();
     /**
      * <code>.oia.NodeAssetRecord asset_record = 6;</code>
+     * @return The assetRecord.
      */
     org.opennms.integration.api.v1.proto.Model.NodeAssetRecord getAssetRecord();
     /**
@@ -9935,6 +10308,7 @@ public final class Model {
     private long id_;
     /**
      * <code>uint64 id = 1;</code>
+     * @return The id.
      */
     public long getId() {
       return id_;
@@ -9944,6 +10318,7 @@ public final class Model {
     private volatile java.lang.Object foreignSource_;
     /**
      * <code>string foreign_source = 2;</code>
+     * @return The foreignSource.
      */
     public java.lang.String getForeignSource() {
       java.lang.Object ref = foreignSource_;
@@ -9959,6 +10334,7 @@ public final class Model {
     }
     /**
      * <code>string foreign_source = 2;</code>
+     * @return The bytes for foreignSource.
      */
     public com.google.protobuf.ByteString
         getForeignSourceBytes() {
@@ -9978,6 +10354,7 @@ public final class Model {
     private volatile java.lang.Object foreignId_;
     /**
      * <code>string foreign_id = 3;</code>
+     * @return The foreignId.
      */
     public java.lang.String getForeignId() {
       java.lang.Object ref = foreignId_;
@@ -9993,6 +10370,7 @@ public final class Model {
     }
     /**
      * <code>string foreign_id = 3;</code>
+     * @return The bytes for foreignId.
      */
     public com.google.protobuf.ByteString
         getForeignIdBytes() {
@@ -10012,6 +10390,7 @@ public final class Model {
     private volatile java.lang.Object label_;
     /**
      * <code>string label = 4;</code>
+     * @return The label.
      */
     public java.lang.String getLabel() {
       java.lang.Object ref = label_;
@@ -10027,6 +10406,7 @@ public final class Model {
     }
     /**
      * <code>string label = 4;</code>
+     * @return The bytes for label.
      */
     public com.google.protobuf.ByteString
         getLabelBytes() {
@@ -10046,6 +10426,7 @@ public final class Model {
     private volatile java.lang.Object location_;
     /**
      * <code>string location = 5;</code>
+     * @return The location.
      */
     public java.lang.String getLocation() {
       java.lang.Object ref = location_;
@@ -10061,6 +10442,7 @@ public final class Model {
     }
     /**
      * <code>string location = 5;</code>
+     * @return The bytes for location.
      */
     public com.google.protobuf.ByteString
         getLocationBytes() {
@@ -10080,12 +10462,14 @@ public final class Model {
     private org.opennms.integration.api.v1.proto.Model.NodeAssetRecord assetRecord_;
     /**
      * <code>.oia.NodeAssetRecord asset_record = 6;</code>
+     * @return Whether the assetRecord field is set.
      */
     public boolean hasAssetRecord() {
       return assetRecord_ != null;
     }
     /**
      * <code>.oia.NodeAssetRecord asset_record = 6;</code>
+     * @return The assetRecord.
      */
     public org.opennms.integration.api.v1.proto.Model.NodeAssetRecord getAssetRecord() {
       return assetRecord_ == null ? org.opennms.integration.api.v1.proto.Model.NodeAssetRecord.getDefaultInstance() : assetRecord_;
@@ -10773,12 +11157,15 @@ public final class Model {
       private long id_ ;
       /**
        * <code>uint64 id = 1;</code>
+       * @return The id.
        */
       public long getId() {
         return id_;
       }
       /**
        * <code>uint64 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(long value) {
         
@@ -10788,6 +11175,7 @@ public final class Model {
       }
       /**
        * <code>uint64 id = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
         
@@ -10799,6 +11187,7 @@ public final class Model {
       private java.lang.Object foreignSource_ = "";
       /**
        * <code>string foreign_source = 2;</code>
+       * @return The foreignSource.
        */
       public java.lang.String getForeignSource() {
         java.lang.Object ref = foreignSource_;
@@ -10814,6 +11203,7 @@ public final class Model {
       }
       /**
        * <code>string foreign_source = 2;</code>
+       * @return The bytes for foreignSource.
        */
       public com.google.protobuf.ByteString
           getForeignSourceBytes() {
@@ -10830,6 +11220,8 @@ public final class Model {
       }
       /**
        * <code>string foreign_source = 2;</code>
+       * @param value The foreignSource to set.
+       * @return This builder for chaining.
        */
       public Builder setForeignSource(
           java.lang.String value) {
@@ -10843,6 +11235,7 @@ public final class Model {
       }
       /**
        * <code>string foreign_source = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearForeignSource() {
         
@@ -10852,6 +11245,8 @@ public final class Model {
       }
       /**
        * <code>string foreign_source = 2;</code>
+       * @param value The bytes for foreignSource to set.
+       * @return This builder for chaining.
        */
       public Builder setForeignSourceBytes(
           com.google.protobuf.ByteString value) {
@@ -10868,6 +11263,7 @@ public final class Model {
       private java.lang.Object foreignId_ = "";
       /**
        * <code>string foreign_id = 3;</code>
+       * @return The foreignId.
        */
       public java.lang.String getForeignId() {
         java.lang.Object ref = foreignId_;
@@ -10883,6 +11279,7 @@ public final class Model {
       }
       /**
        * <code>string foreign_id = 3;</code>
+       * @return The bytes for foreignId.
        */
       public com.google.protobuf.ByteString
           getForeignIdBytes() {
@@ -10899,6 +11296,8 @@ public final class Model {
       }
       /**
        * <code>string foreign_id = 3;</code>
+       * @param value The foreignId to set.
+       * @return This builder for chaining.
        */
       public Builder setForeignId(
           java.lang.String value) {
@@ -10912,6 +11311,7 @@ public final class Model {
       }
       /**
        * <code>string foreign_id = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearForeignId() {
         
@@ -10921,6 +11321,8 @@ public final class Model {
       }
       /**
        * <code>string foreign_id = 3;</code>
+       * @param value The bytes for foreignId to set.
+       * @return This builder for chaining.
        */
       public Builder setForeignIdBytes(
           com.google.protobuf.ByteString value) {
@@ -10937,6 +11339,7 @@ public final class Model {
       private java.lang.Object label_ = "";
       /**
        * <code>string label = 4;</code>
+       * @return The label.
        */
       public java.lang.String getLabel() {
         java.lang.Object ref = label_;
@@ -10952,6 +11355,7 @@ public final class Model {
       }
       /**
        * <code>string label = 4;</code>
+       * @return The bytes for label.
        */
       public com.google.protobuf.ByteString
           getLabelBytes() {
@@ -10968,6 +11372,8 @@ public final class Model {
       }
       /**
        * <code>string label = 4;</code>
+       * @param value The label to set.
+       * @return This builder for chaining.
        */
       public Builder setLabel(
           java.lang.String value) {
@@ -10981,6 +11387,7 @@ public final class Model {
       }
       /**
        * <code>string label = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLabel() {
         
@@ -10990,6 +11397,8 @@ public final class Model {
       }
       /**
        * <code>string label = 4;</code>
+       * @param value The bytes for label to set.
+       * @return This builder for chaining.
        */
       public Builder setLabelBytes(
           com.google.protobuf.ByteString value) {
@@ -11006,6 +11415,7 @@ public final class Model {
       private java.lang.Object location_ = "";
       /**
        * <code>string location = 5;</code>
+       * @return The location.
        */
       public java.lang.String getLocation() {
         java.lang.Object ref = location_;
@@ -11021,6 +11431,7 @@ public final class Model {
       }
       /**
        * <code>string location = 5;</code>
+       * @return The bytes for location.
        */
       public com.google.protobuf.ByteString
           getLocationBytes() {
@@ -11037,6 +11448,8 @@ public final class Model {
       }
       /**
        * <code>string location = 5;</code>
+       * @param value The location to set.
+       * @return This builder for chaining.
        */
       public Builder setLocation(
           java.lang.String value) {
@@ -11050,6 +11463,7 @@ public final class Model {
       }
       /**
        * <code>string location = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLocation() {
         
@@ -11059,6 +11473,8 @@ public final class Model {
       }
       /**
        * <code>string location = 5;</code>
+       * @param value The bytes for location to set.
+       * @return This builder for chaining.
        */
       public Builder setLocationBytes(
           com.google.protobuf.ByteString value) {
@@ -11077,12 +11493,14 @@ public final class Model {
           org.opennms.integration.api.v1.proto.Model.NodeAssetRecord, org.opennms.integration.api.v1.proto.Model.NodeAssetRecord.Builder, org.opennms.integration.api.v1.proto.Model.NodeAssetRecordOrBuilder> assetRecordBuilder_;
       /**
        * <code>.oia.NodeAssetRecord asset_record = 6;</code>
+       * @return Whether the assetRecord field is set.
        */
       public boolean hasAssetRecord() {
         return assetRecordBuilder_ != null || assetRecord_ != null;
       }
       /**
        * <code>.oia.NodeAssetRecord asset_record = 6;</code>
+       * @return The assetRecord.
        */
       public org.opennms.integration.api.v1.proto.Model.NodeAssetRecord getAssetRecord() {
         if (assetRecordBuilder_ == null) {
@@ -11967,25 +12385,30 @@ public final class Model {
 
     /**
      * <code>string reduction_key = 1;</code>
+     * @return The reductionKey.
      */
     java.lang.String getReductionKey();
     /**
      * <code>string reduction_key = 1;</code>
+     * @return The bytes for reductionKey.
      */
     com.google.protobuf.ByteString
         getReductionKeyBytes();
 
     /**
      * <code>uint64 id = 2;</code>
+     * @return The id.
      */
     long getId();
 
     /**
      * <code>.oia.Node node = 3;</code>
+     * @return Whether the node field is set.
      */
     boolean hasNode();
     /**
      * <code>.oia.Node node = 3;</code>
+     * @return The node.
      */
     org.opennms.integration.api.v1.proto.Model.Node getNode();
     /**
@@ -11995,29 +12418,35 @@ public final class Model {
 
     /**
      * <code>.oia.AlarmType type = 4;</code>
+     * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
      * <code>.oia.AlarmType type = 4;</code>
+     * @return The type.
      */
     org.opennms.integration.api.v1.proto.Model.AlarmType getType();
 
     /**
      * <code>string managed_object_instance = 5;</code>
+     * @return The managedObjectInstance.
      */
     java.lang.String getManagedObjectInstance();
     /**
      * <code>string managed_object_instance = 5;</code>
+     * @return The bytes for managedObjectInstance.
      */
     com.google.protobuf.ByteString
         getManagedObjectInstanceBytes();
 
     /**
      * <code>string managed_object_type = 6;</code>
+     * @return The managedObjectType.
      */
     java.lang.String getManagedObjectType();
     /**
      * <code>string managed_object_type = 6;</code>
+     * @return The bytes for managedObjectType.
      */
     com.google.protobuf.ByteString
         getManagedObjectTypeBytes();
@@ -12058,15 +12487,18 @@ public final class Model {
 
     /**
      * <code>.oia.Severity severity = 8;</code>
+     * @return The enum numeric value on the wire for severity.
      */
     int getSeverityValue();
     /**
      * <code>.oia.Severity severity = 8;</code>
+     * @return The severity.
      */
     org.opennms.integration.api.v1.proto.Model.Severity getSeverity();
 
     /**
      * <code>bool is_situation = 9;</code>
+     * @return The isSituation.
      */
     boolean getIsSituation();
 
@@ -12096,40 +12528,48 @@ public final class Model {
 
     /**
      * <code>string log_message = 11;</code>
+     * @return The logMessage.
      */
     java.lang.String getLogMessage();
     /**
      * <code>string log_message = 11;</code>
+     * @return The bytes for logMessage.
      */
     com.google.protobuf.ByteString
         getLogMessageBytes();
 
     /**
      * <code>string description = 12;</code>
+     * @return The description.
      */
     java.lang.String getDescription();
     /**
      * <code>string description = 12;</code>
+     * @return The bytes for description.
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
 
     /**
      * <code>uint64 last_event_time = 13;</code>
+     * @return The lastEventTime.
      */
     long getLastEventTime();
 
     /**
      * <code>uint64 first_event_time = 14;</code>
+     * @return The firstEventTime.
      */
     long getFirstEventTime();
 
     /**
      * <code>.oia.DatabaseEvent last_event = 15;</code>
+     * @return Whether the lastEvent field is set.
      */
     boolean hasLastEvent();
     /**
      * <code>.oia.DatabaseEvent last_event = 15;</code>
+     * @return The lastEvent.
      */
     org.opennms.integration.api.v1.proto.Model.DatabaseEvent getLastEvent();
     /**
@@ -12352,6 +12792,7 @@ public final class Model {
     private volatile java.lang.Object reductionKey_;
     /**
      * <code>string reduction_key = 1;</code>
+     * @return The reductionKey.
      */
     public java.lang.String getReductionKey() {
       java.lang.Object ref = reductionKey_;
@@ -12367,6 +12808,7 @@ public final class Model {
     }
     /**
      * <code>string reduction_key = 1;</code>
+     * @return The bytes for reductionKey.
      */
     public com.google.protobuf.ByteString
         getReductionKeyBytes() {
@@ -12386,6 +12828,7 @@ public final class Model {
     private long id_;
     /**
      * <code>uint64 id = 2;</code>
+     * @return The id.
      */
     public long getId() {
       return id_;
@@ -12395,12 +12838,14 @@ public final class Model {
     private org.opennms.integration.api.v1.proto.Model.Node node_;
     /**
      * <code>.oia.Node node = 3;</code>
+     * @return Whether the node field is set.
      */
     public boolean hasNode() {
       return node_ != null;
     }
     /**
      * <code>.oia.Node node = 3;</code>
+     * @return The node.
      */
     public org.opennms.integration.api.v1.proto.Model.Node getNode() {
       return node_ == null ? org.opennms.integration.api.v1.proto.Model.Node.getDefaultInstance() : node_;
@@ -12416,12 +12861,14 @@ public final class Model {
     private int type_;
     /**
      * <code>.oia.AlarmType type = 4;</code>
+     * @return The enum numeric value on the wire for type.
      */
     public int getTypeValue() {
       return type_;
     }
     /**
      * <code>.oia.AlarmType type = 4;</code>
+     * @return The type.
      */
     public org.opennms.integration.api.v1.proto.Model.AlarmType getType() {
       @SuppressWarnings("deprecation")
@@ -12433,6 +12880,7 @@ public final class Model {
     private volatile java.lang.Object managedObjectInstance_;
     /**
      * <code>string managed_object_instance = 5;</code>
+     * @return The managedObjectInstance.
      */
     public java.lang.String getManagedObjectInstance() {
       java.lang.Object ref = managedObjectInstance_;
@@ -12448,6 +12896,7 @@ public final class Model {
     }
     /**
      * <code>string managed_object_instance = 5;</code>
+     * @return The bytes for managedObjectInstance.
      */
     public com.google.protobuf.ByteString
         getManagedObjectInstanceBytes() {
@@ -12467,6 +12916,7 @@ public final class Model {
     private volatile java.lang.Object managedObjectType_;
     /**
      * <code>string managed_object_type = 6;</code>
+     * @return The managedObjectType.
      */
     public java.lang.String getManagedObjectType() {
       java.lang.Object ref = managedObjectType_;
@@ -12482,6 +12932,7 @@ public final class Model {
     }
     /**
      * <code>string managed_object_type = 6;</code>
+     * @return The bytes for managedObjectType.
      */
     public com.google.protobuf.ByteString
         getManagedObjectTypeBytes() {
@@ -12577,12 +13028,14 @@ public final class Model {
     private int severity_;
     /**
      * <code>.oia.Severity severity = 8;</code>
+     * @return The enum numeric value on the wire for severity.
      */
     public int getSeverityValue() {
       return severity_;
     }
     /**
      * <code>.oia.Severity severity = 8;</code>
+     * @return The severity.
      */
     public org.opennms.integration.api.v1.proto.Model.Severity getSeverity() {
       @SuppressWarnings("deprecation")
@@ -12594,6 +13047,7 @@ public final class Model {
     private boolean isSituation_;
     /**
      * <code>bool is_situation = 9;</code>
+     * @return The isSituation.
      */
     public boolean getIsSituation() {
       return isSituation_;
@@ -12638,6 +13092,7 @@ public final class Model {
     private volatile java.lang.Object logMessage_;
     /**
      * <code>string log_message = 11;</code>
+     * @return The logMessage.
      */
     public java.lang.String getLogMessage() {
       java.lang.Object ref = logMessage_;
@@ -12653,6 +13108,7 @@ public final class Model {
     }
     /**
      * <code>string log_message = 11;</code>
+     * @return The bytes for logMessage.
      */
     public com.google.protobuf.ByteString
         getLogMessageBytes() {
@@ -12672,6 +13128,7 @@ public final class Model {
     private volatile java.lang.Object description_;
     /**
      * <code>string description = 12;</code>
+     * @return The description.
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -12687,6 +13144,7 @@ public final class Model {
     }
     /**
      * <code>string description = 12;</code>
+     * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -12706,6 +13164,7 @@ public final class Model {
     private long lastEventTime_;
     /**
      * <code>uint64 last_event_time = 13;</code>
+     * @return The lastEventTime.
      */
     public long getLastEventTime() {
       return lastEventTime_;
@@ -12715,6 +13174,7 @@ public final class Model {
     private long firstEventTime_;
     /**
      * <code>uint64 first_event_time = 14;</code>
+     * @return The firstEventTime.
      */
     public long getFirstEventTime() {
       return firstEventTime_;
@@ -12724,12 +13184,14 @@ public final class Model {
     private org.opennms.integration.api.v1.proto.Model.DatabaseEvent lastEvent_;
     /**
      * <code>.oia.DatabaseEvent last_event = 15;</code>
+     * @return Whether the lastEvent field is set.
      */
     public boolean hasLastEvent() {
       return lastEvent_ != null;
     }
     /**
      * <code>.oia.DatabaseEvent last_event = 15;</code>
+     * @return The lastEvent.
      */
     public org.opennms.integration.api.v1.proto.Model.DatabaseEvent getLastEvent() {
       return lastEvent_ == null ? org.opennms.integration.api.v1.proto.Model.DatabaseEvent.getDefaultInstance() : lastEvent_;
@@ -13384,6 +13846,7 @@ public final class Model {
       private java.lang.Object reductionKey_ = "";
       /**
        * <code>string reduction_key = 1;</code>
+       * @return The reductionKey.
        */
       public java.lang.String getReductionKey() {
         java.lang.Object ref = reductionKey_;
@@ -13399,6 +13862,7 @@ public final class Model {
       }
       /**
        * <code>string reduction_key = 1;</code>
+       * @return The bytes for reductionKey.
        */
       public com.google.protobuf.ByteString
           getReductionKeyBytes() {
@@ -13415,6 +13879,8 @@ public final class Model {
       }
       /**
        * <code>string reduction_key = 1;</code>
+       * @param value The reductionKey to set.
+       * @return This builder for chaining.
        */
       public Builder setReductionKey(
           java.lang.String value) {
@@ -13428,6 +13894,7 @@ public final class Model {
       }
       /**
        * <code>string reduction_key = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearReductionKey() {
         
@@ -13437,6 +13904,8 @@ public final class Model {
       }
       /**
        * <code>string reduction_key = 1;</code>
+       * @param value The bytes for reductionKey to set.
+       * @return This builder for chaining.
        */
       public Builder setReductionKeyBytes(
           com.google.protobuf.ByteString value) {
@@ -13453,12 +13922,15 @@ public final class Model {
       private long id_ ;
       /**
        * <code>uint64 id = 2;</code>
+       * @return The id.
        */
       public long getId() {
         return id_;
       }
       /**
        * <code>uint64 id = 2;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
        */
       public Builder setId(long value) {
         
@@ -13468,6 +13940,7 @@ public final class Model {
       }
       /**
        * <code>uint64 id = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearId() {
         
@@ -13481,12 +13954,14 @@ public final class Model {
           org.opennms.integration.api.v1.proto.Model.Node, org.opennms.integration.api.v1.proto.Model.Node.Builder, org.opennms.integration.api.v1.proto.Model.NodeOrBuilder> nodeBuilder_;
       /**
        * <code>.oia.Node node = 3;</code>
+       * @return Whether the node field is set.
        */
       public boolean hasNode() {
         return nodeBuilder_ != null || node_ != null;
       }
       /**
        * <code>.oia.Node node = 3;</code>
+       * @return The node.
        */
       public org.opennms.integration.api.v1.proto.Model.Node getNode() {
         if (nodeBuilder_ == null) {
@@ -13596,12 +14071,15 @@ public final class Model {
       private int type_ = 0;
       /**
        * <code>.oia.AlarmType type = 4;</code>
+       * @return The enum numeric value on the wire for type.
        */
       public int getTypeValue() {
         return type_;
       }
       /**
        * <code>.oia.AlarmType type = 4;</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -13610,6 +14088,7 @@ public final class Model {
       }
       /**
        * <code>.oia.AlarmType type = 4;</code>
+       * @return The type.
        */
       public org.opennms.integration.api.v1.proto.Model.AlarmType getType() {
         @SuppressWarnings("deprecation")
@@ -13618,6 +14097,8 @@ public final class Model {
       }
       /**
        * <code>.oia.AlarmType type = 4;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
       public Builder setType(org.opennms.integration.api.v1.proto.Model.AlarmType value) {
         if (value == null) {
@@ -13630,6 +14111,7 @@ public final class Model {
       }
       /**
        * <code>.oia.AlarmType type = 4;</code>
+       * @return This builder for chaining.
        */
       public Builder clearType() {
         
@@ -13641,6 +14123,7 @@ public final class Model {
       private java.lang.Object managedObjectInstance_ = "";
       /**
        * <code>string managed_object_instance = 5;</code>
+       * @return The managedObjectInstance.
        */
       public java.lang.String getManagedObjectInstance() {
         java.lang.Object ref = managedObjectInstance_;
@@ -13656,6 +14139,7 @@ public final class Model {
       }
       /**
        * <code>string managed_object_instance = 5;</code>
+       * @return The bytes for managedObjectInstance.
        */
       public com.google.protobuf.ByteString
           getManagedObjectInstanceBytes() {
@@ -13672,6 +14156,8 @@ public final class Model {
       }
       /**
        * <code>string managed_object_instance = 5;</code>
+       * @param value The managedObjectInstance to set.
+       * @return This builder for chaining.
        */
       public Builder setManagedObjectInstance(
           java.lang.String value) {
@@ -13685,6 +14171,7 @@ public final class Model {
       }
       /**
        * <code>string managed_object_instance = 5;</code>
+       * @return This builder for chaining.
        */
       public Builder clearManagedObjectInstance() {
         
@@ -13694,6 +14181,8 @@ public final class Model {
       }
       /**
        * <code>string managed_object_instance = 5;</code>
+       * @param value The bytes for managedObjectInstance to set.
+       * @return This builder for chaining.
        */
       public Builder setManagedObjectInstanceBytes(
           com.google.protobuf.ByteString value) {
@@ -13710,6 +14199,7 @@ public final class Model {
       private java.lang.Object managedObjectType_ = "";
       /**
        * <code>string managed_object_type = 6;</code>
+       * @return The managedObjectType.
        */
       public java.lang.String getManagedObjectType() {
         java.lang.Object ref = managedObjectType_;
@@ -13725,6 +14215,7 @@ public final class Model {
       }
       /**
        * <code>string managed_object_type = 6;</code>
+       * @return The bytes for managedObjectType.
        */
       public com.google.protobuf.ByteString
           getManagedObjectTypeBytes() {
@@ -13741,6 +14232,8 @@ public final class Model {
       }
       /**
        * <code>string managed_object_type = 6;</code>
+       * @param value The managedObjectType to set.
+       * @return This builder for chaining.
        */
       public Builder setManagedObjectType(
           java.lang.String value) {
@@ -13754,6 +14247,7 @@ public final class Model {
       }
       /**
        * <code>string managed_object_type = 6;</code>
+       * @return This builder for chaining.
        */
       public Builder clearManagedObjectType() {
         
@@ -13763,6 +14257,8 @@ public final class Model {
       }
       /**
        * <code>string managed_object_type = 6;</code>
+       * @param value The bytes for managedObjectType to set.
+       * @return This builder for chaining.
        */
       public Builder setManagedObjectTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -13902,12 +14398,15 @@ public final class Model {
       private int severity_ = 0;
       /**
        * <code>.oia.Severity severity = 8;</code>
+       * @return The enum numeric value on the wire for severity.
        */
       public int getSeverityValue() {
         return severity_;
       }
       /**
        * <code>.oia.Severity severity = 8;</code>
+       * @param value The enum numeric value on the wire for severity to set.
+       * @return This builder for chaining.
        */
       public Builder setSeverityValue(int value) {
         severity_ = value;
@@ -13916,6 +14415,7 @@ public final class Model {
       }
       /**
        * <code>.oia.Severity severity = 8;</code>
+       * @return The severity.
        */
       public org.opennms.integration.api.v1.proto.Model.Severity getSeverity() {
         @SuppressWarnings("deprecation")
@@ -13924,6 +14424,8 @@ public final class Model {
       }
       /**
        * <code>.oia.Severity severity = 8;</code>
+       * @param value The severity to set.
+       * @return This builder for chaining.
        */
       public Builder setSeverity(org.opennms.integration.api.v1.proto.Model.Severity value) {
         if (value == null) {
@@ -13936,6 +14438,7 @@ public final class Model {
       }
       /**
        * <code>.oia.Severity severity = 8;</code>
+       * @return This builder for chaining.
        */
       public Builder clearSeverity() {
         
@@ -13947,12 +14450,15 @@ public final class Model {
       private boolean isSituation_ ;
       /**
        * <code>bool is_situation = 9;</code>
+       * @return The isSituation.
        */
       public boolean getIsSituation() {
         return isSituation_;
       }
       /**
        * <code>bool is_situation = 9;</code>
+       * @param value The isSituation to set.
+       * @return This builder for chaining.
        */
       public Builder setIsSituation(boolean value) {
         
@@ -13962,6 +14468,7 @@ public final class Model {
       }
       /**
        * <code>bool is_situation = 9;</code>
+       * @return This builder for chaining.
        */
       public Builder clearIsSituation() {
         
@@ -14213,6 +14720,7 @@ public final class Model {
       private java.lang.Object logMessage_ = "";
       /**
        * <code>string log_message = 11;</code>
+       * @return The logMessage.
        */
       public java.lang.String getLogMessage() {
         java.lang.Object ref = logMessage_;
@@ -14228,6 +14736,7 @@ public final class Model {
       }
       /**
        * <code>string log_message = 11;</code>
+       * @return The bytes for logMessage.
        */
       public com.google.protobuf.ByteString
           getLogMessageBytes() {
@@ -14244,6 +14753,8 @@ public final class Model {
       }
       /**
        * <code>string log_message = 11;</code>
+       * @param value The logMessage to set.
+       * @return This builder for chaining.
        */
       public Builder setLogMessage(
           java.lang.String value) {
@@ -14257,6 +14768,7 @@ public final class Model {
       }
       /**
        * <code>string log_message = 11;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLogMessage() {
         
@@ -14266,6 +14778,8 @@ public final class Model {
       }
       /**
        * <code>string log_message = 11;</code>
+       * @param value The bytes for logMessage to set.
+       * @return This builder for chaining.
        */
       public Builder setLogMessageBytes(
           com.google.protobuf.ByteString value) {
@@ -14282,6 +14796,7 @@ public final class Model {
       private java.lang.Object description_ = "";
       /**
        * <code>string description = 12;</code>
+       * @return The description.
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -14297,6 +14812,7 @@ public final class Model {
       }
       /**
        * <code>string description = 12;</code>
+       * @return The bytes for description.
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -14313,6 +14829,8 @@ public final class Model {
       }
       /**
        * <code>string description = 12;</code>
+       * @param value The description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescription(
           java.lang.String value) {
@@ -14326,6 +14844,7 @@ public final class Model {
       }
       /**
        * <code>string description = 12;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDescription() {
         
@@ -14335,6 +14854,8 @@ public final class Model {
       }
       /**
        * <code>string description = 12;</code>
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
@@ -14351,12 +14872,15 @@ public final class Model {
       private long lastEventTime_ ;
       /**
        * <code>uint64 last_event_time = 13;</code>
+       * @return The lastEventTime.
        */
       public long getLastEventTime() {
         return lastEventTime_;
       }
       /**
        * <code>uint64 last_event_time = 13;</code>
+       * @param value The lastEventTime to set.
+       * @return This builder for chaining.
        */
       public Builder setLastEventTime(long value) {
         
@@ -14366,6 +14890,7 @@ public final class Model {
       }
       /**
        * <code>uint64 last_event_time = 13;</code>
+       * @return This builder for chaining.
        */
       public Builder clearLastEventTime() {
         
@@ -14377,12 +14902,15 @@ public final class Model {
       private long firstEventTime_ ;
       /**
        * <code>uint64 first_event_time = 14;</code>
+       * @return The firstEventTime.
        */
       public long getFirstEventTime() {
         return firstEventTime_;
       }
       /**
        * <code>uint64 first_event_time = 14;</code>
+       * @param value The firstEventTime to set.
+       * @return This builder for chaining.
        */
       public Builder setFirstEventTime(long value) {
         
@@ -14392,6 +14920,7 @@ public final class Model {
       }
       /**
        * <code>uint64 first_event_time = 14;</code>
+       * @return This builder for chaining.
        */
       public Builder clearFirstEventTime() {
         
@@ -14405,12 +14934,14 @@ public final class Model {
           org.opennms.integration.api.v1.proto.Model.DatabaseEvent, org.opennms.integration.api.v1.proto.Model.DatabaseEvent.Builder, org.opennms.integration.api.v1.proto.Model.DatabaseEventOrBuilder> lastEventBuilder_;
       /**
        * <code>.oia.DatabaseEvent last_event = 15;</code>
+       * @return Whether the lastEvent field is set.
        */
       public boolean hasLastEvent() {
         return lastEventBuilder_ != null || lastEvent_ != null;
       }
       /**
        * <code>.oia.DatabaseEvent last_event = 15;</code>
+       * @return The lastEvent.
        */
       public org.opennms.integration.api.v1.proto.Model.DatabaseEvent getLastEvent() {
         if (lastEventBuilder_ == null) {

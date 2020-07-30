@@ -174,7 +174,7 @@ public class ModelConverter {
         return builder.build();
     }
 
-    private static Model.InMemoryEvent convertInMemoryEvent(InMemoryEvent inMemoryEvent) {
+    public static Model.InMemoryEvent convertInMemoryEvent(InMemoryEvent inMemoryEvent) {
         Model.InMemoryEvent.Builder builder = Model.InMemoryEvent.newBuilder();
         Optional.ofNullable(inMemoryEvent.getUei()).ifPresent(builder::setUei);
         Optional.ofNullable(inMemoryEvent.getSource()).ifPresent(builder::setUei);

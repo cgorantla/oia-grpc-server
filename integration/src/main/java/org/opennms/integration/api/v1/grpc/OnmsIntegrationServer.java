@@ -32,9 +32,11 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 
 import org.opennms.integration.api.v1.events.EventForwarder;
+import org.opennms.integration.api.v1.events.EventSubscriptionService;
 import org.opennms.integration.api.v1.grpc.alarms.AlarmLifeCycleListenerStream;
 import org.opennms.integration.api.v1.grpc.alarms.AlarmLifeCycleListenerStreamImpl;
 import org.opennms.integration.api.v1.grpc.events.EventForwarderStreamImpl;
+import org.opennms.integration.api.v1.grpc.events.EventListenerStreamImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -49,9 +51,11 @@ public class OnmsIntegrationServer implements GrpcIntegrationServer {
     private static final int PORT = 8991;
     private AlarmLifeCycleListenerStream alarmLifeCycleListenerStream;
     private final EventForwarder eventForwarder;
+    private final EventSubscriptionService eventSubscriptionService;
 
-    public OnmsIntegrationServer(EventForwarder eventForwarder) {
+    public OnmsIntegrationServer(EventForwarder eventForwarder, EventSubscriptionService eventSubscriptionService) {
         this.eventForwarder = eventForwarder;
+        this.eventSubscriptionService = eventSubscriptionService;
     }
 
 
@@ -59,7 +63,8 @@ public class OnmsIntegrationServer implements GrpcIntegrationServer {
         alarmLifeCycleListenerStream = new AlarmLifeCycleListenerStreamImpl();
         NettyServerBuilder serverBuilder = NettyServerBuilder.forAddress(new InetSocketAddress(PORT))
                 .addService(alarmLifeCycleListenerStream)
-                .addService(new EventForwarderStreamImpl(eventForwarder));
+                .addService(new EventForwarderStreamImpl(eventForwarder))
+                .addService(new EventListenerStreamImpl(eventSubscriptionService));
         server = serverBuilder.build();
         server.start();
         LOG.info("OpenNMS Integration Server started");
